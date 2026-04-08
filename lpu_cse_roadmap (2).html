@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LPU CSE · Your 4-Year Roadmap</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--white:#fff;--bg:#f7f8fc;--card:#fff;--border:#e8eaf0;--border2:#d0d5e8;--text:#1a1d2e;--sub:#5a6080;--muted:#9099b8;--orange:#ff6b2b;--orange-light:#fff3ee;--orange-border:#fed7aa;--orange-mid:#ffe4d4;--blue:#2563eb;--blue-light:#eff4ff;--blue-border:#bfdbfe;--green:#16a34a;--green-light:#f0fdf4;--green-border:#bbf7d0;--purple:#7c3aed;--purple-light:#f5f3ff;--purple-border:#e9d5ff;--teal:#0d9488;--teal-light:#f0fdfa;--teal-border:#99f6e4;--rose:#e11d48;--rose-light:#fff1f2;--rose-border:#fecdd3;--cyan:#0891b2;--cyan-light:#ecfeff;--cyan-border:#a5f3fc;--radius:14px;--shadow:0 4px 20px -5px rgba(0,0,0,.08);--shadow-sm:0 1px 2px rgba(0,0,0,.05)}
+*{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
+nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 20px;position:sticky;top:0;z-index:200;display:flex;align-items:center;height:58px;box-shadow:var(--shadow-sm)}
+.brand{font-family:'Outfit',sans-serif;font-weight:800;font-size:18px;color:var(--blue);margin-right:auto;display:flex;align-items:center;gap:8px} .brand span{color:var(--text)}
+.nav-links{display:flex;gap:6px} .nav-btn{padding:8px 16px;border-radius:8px;border:none;background:transparent;font-family:inherit;font-size:13px;font-weight:600;color:var(--sub);cursor:pointer;transition:.2s} .nav-btn:hover{background:var(--bg);color:var(--text)} .nav-btn.active{background:var(--blue);color:var(--white)}
+.page{display:none} .page.active{display:block;animation:fadeUp .3s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)}}
+.container{max-width:1200px;margin:0 auto;padding:32px 20px}
+
+/* HOME */
+.hero{background:var(--white);border-bottom:1px solid var(--border);padding:48px 20px 40px;text-align:center}
+.hero-chip{display:inline-flex;align-items:center;gap:6px;background:var(--orange-light);color:var(--orange);border:1px solid var(--orange-mid);font-size:12px;font-weight:600;letter-spacing:.5px;padding:5px 14px;border-radius:99px;margin-bottom:18px}
+.hero h1{font-family:'Outfit',sans-serif;font-size:clamp(26px,5vw,46px);font-weight:700;line-height:1.15;letter-spacing:-.5px;margin-bottom:12px} .hero h1 span{color:var(--orange)}
+.hero-sub{color:var(--sub);font-size:15px;max-width:500px;margin:0 auto 28px}
+.stats-strip{display:flex;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);max-width:600px;margin:0 auto;overflow:hidden}
+.stat{flex:1;padding:14px 10px;text-align:center;border-right:1px solid var(--border)} .stat:last-child{border-right:none}
+.stat-n{font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;color:var(--text);line-height:1} .stat-l{font-size:11px;color:var(--muted);margin-top:3px}
+
+/* HOW IT WORKS */
+.section-title{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px}
+.section-sub{color:var(--sub);font-size:14px;margin-bottom:20px}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:0}
+@media(max-width:600px){.how-grid{grid-template-columns:1fr}}
+.how-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+.how-num{width:32px;height:32px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;margin-bottom:12px}
+.how-title{font-weight:700;margin-bottom:6px} .how-desc{color:var(--sub);font-size:13px;line-height:1.6}
+
+.legend{display:flex;flex-wrap:wrap;gap:14px;padding:14px 18px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:24px}
+.leg{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--sub)} .leg-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+
+/* NETFLIX SEMESTER GRID */
+.sem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative;margin-bottom:32px}
+@media(max-width:900px){.sem-grid{grid-template-columns:repeat(2,1fr)}} @media(max-width:550px){.sem-grid{grid-template-columns:1fr}}
+.sem-item{position:relative}
+.sem-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:24px;cursor:pointer;transition:all .3s cubic-bezier(0.16,1,0.3,1);position:relative;display:flex;flex-direction:column;z-index:10;height:100%;box-shadow:var(--shadow-sm)}
+.sem-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:var(--shadow);border-color:var(--blue-border)}
+.sem-card.active{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-light);transform:scale(1.02);z-index:20}
+.year-tag{font-size:11px;font-weight:800;text-transform:uppercase;color:var(--muted);margin-bottom:8px;letter-spacing:1px}
+.sem-title{font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:var(--text);margin-bottom:4px}
+.sem-label{font-size:14px;font-weight:600;color:var(--sub);flex:1}
+.sem-hl{margin-top:16px;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700;text-align:center}
+.hl-red{background:var(--rose-light);color:var(--rose);border:1px solid var(--rose-border)} .hl-orange{background:var(--orange-light);color:var(--orange);border:1px solid var(--orange-border)} .hl-none{display:none}
+
+.expand-row{grid-column:1 / -1;display:none;margin:16px 0 32px;animation:slideDown 0.4s cubic-bezier(0.16,1,0.3,1)}
+@keyframes slideDown{from{opacity:0;transform:scaleY(0.95);transform-origin:top} to{opacity:1;transform:scaleY(1)}}
+.details-panel{background:var(--white);border:2px solid var(--blue);border-radius:var(--radius);padding:32px;position:relative;box-shadow:var(--shadow)}
+.details-panel::after{content:'';position:absolute;top:-12px;left:calc(var(--arrow-pos) - 10px);border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:10px solid var(--blue)}
+.close-btn{position:absolute;top:16px;right:20px;width:32px;height:32px;border-radius:50%;background:var(--bg);border:none;color:var(--text);font-size:20px;cursor:pointer;transition:all .2s;font-weight:700}
+.close-btn:hover{background:var(--rose);color:#fff}
+.panel-header{font-family:'Outfit',sans-serif;font-size:28px;font-weight:800;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:24px;display:flex;align-items:baseline;gap:12px} .panel-header span{color:var(--sub);font-size:18px;font-weight:500}
+.cGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;align-items:start}
+.d-box{border:1px solid;border-radius:12px;padding:20px}
+.d-box h3{font-family:'Outfit',sans-serif;font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
+.d-box ul{list-style:none} .d-box li{font-size:13px;margin-bottom:8px;padding-left:20px;position:relative;color:var(--text);font-weight:500}
+.d-box li:last-child{margin-bottom:0} .d-box li::before{content:'✓';position:absolute;left:0;color:inherit;font-size:14px;font-weight:800;opacity:0.8}
+.theme-blue{background:var(--blue-light);border-color:var(--blue-border)} .theme-blue h3,.theme-blue li::before{color:var(--blue)}
+.theme-orange{background:var(--orange-light);border-color:var(--orange-border)} .theme-orange h3,.theme-orange li::before{color:var(--orange)}
+.theme-purple{background:var(--purple-light);border-color:var(--purple-border)} .theme-purple h3,.theme-purple li::before{color:var(--purple)}
+.theme-green{background:var(--green-light);border-color:var(--green-border)} .theme-green h3,.theme-green li::before{color:var(--green)}
+.theme-red{background:var(--rose-light);border-color:var(--rose-border)} .theme-red h3,.theme-red li::before{color:var(--rose)}
+.theme-teal{background:var(--teal-light);border-color:var(--teal-border)} .theme-teal h3,.theme-teal li::before{color:var(--teal)}
+.theme-cyan{background:var(--cyan-light);border-color:var(--cyan-border)} .theme-cyan h3,.theme-cyan li::before{color:var(--cyan)}
+.theme-blue li{flex-direction:column;padding-bottom:10px;margin-bottom:10px;border-bottom:1px solid rgba(37,99,235,0.1);padding-left:0} .theme-blue li::before{content:none} .theme-blue li:last-child{border-bottom:none;padding-bottom:0}
+.c-name{color:var(--text);font-size:14px;font-weight:700} .c-meta{display:flex;gap:8px;font-size:11px;color:var(--sub);margin-top:5px;font-weight:600} .c-meta span{background:#fff;padding:2px 8px;border-radius:4px;border:1px solid var(--border)}
+
+/* TABS (COURSES, MINORS, CAREER) (Condensed CSS) */
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.search{flex:1;min-width:200px;padding:9px 14px;border-radius:10px;border:1.5px solid var(--border);font-family:inherit;font-size:14px;outline:none;transition:.15s} .search:focus{border-color:var(--orange)}
+.chip-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px} .chip{padding:5px 12px;border-radius:99px;border:1.5px solid var(--border);background:var(--white);color:var(--sub);font-size:12px;font-weight:600;cursor:pointer;transition:.15s;font-family:inherit} .chip:hover{border-color:var(--orange);color:var(--orange)} .chip.on{background:var(--orange);border-color:var(--orange);color:#fff}
+.tbl-head,.cr-row{display:grid;grid-template-columns:88px 1fr 70px 110px 80px;gap:12px;align-items:center}
+.tbl-head{padding:0 16px 8px;font-size:11px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--muted)}
+@media(max-width:640px){.tbl-head{display:none} .cr-row{grid-template-columns:1fr;gap:5px}}
+.cr-row{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:12px 16px;transition:.15s;margin-bottom:6px} .cr-row:hover{border-color:var(--orange-mid);box-shadow:var(--shadow-sm)}
+.cr-code{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:var(--muted)} .cr-name{font-weight:600;font-size:13px;color:var(--text)} .cr-num{font-size:13px;font-weight:700;color:var(--blue)}
+.badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:700}
+.b-core{background:var(--blue-light);color:var(--blue)} .b-minor{background:var(--orange-light);color:var(--orange)} .b-open{background:var(--teal-light);color:var(--teal)} .b-pathway{background:var(--purple-light);color:var(--purple)} .b-elective{background:var(--bg);color:var(--muted);border:1px solid var(--border)} .b-training{background:var(--rose-light);color:var(--rose)}
+.sem-tag{background:var(--bg);color:var(--sub);padding:3px 9px;border-radius:6px;font-size:12px;font-weight:600}
+
+.minors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px} @media(max-width:700px){.minors-grid{grid-template-columns:1fr}}
+.minor-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px;cursor:pointer;transition:.2s} .minor-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)} .minor-card.picked{border-width:2px}
+.minor-icon-box{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px} .minor-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;margin-bottom:6px} .minor-blurb{color:var(--sub);font-size:12px;line-height:1.6;margin-bottom:14px}
+.role-pills{display:flex;flex-wrap:wrap;gap:5px} .role-pill{padding:3px 9px;border-radius:6px;font-size:11px;font-weight:600;background:var(--bg);color:var(--sub);border:1px solid var(--border)}
+
+.career-intro{background:linear-gradient(135deg,var(--orange-light) 0%,#fff 60%);border:1px solid var(--orange-mid);border-radius:var(--radius);padding:24px;margin-bottom:24px;display:flex;gap:16px;align-items:flex-start} .career-intro-icon{font-size:36px} .career-intro h3{font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;margin-bottom:6px} .career-intro p{color:var(--sub);font-size:13px}
+.career-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px} @media(max-width:640px){.career-grid{grid-template-columns:repeat(2,1fr)}}
+.career-btn{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px 14px;text-align:center;cursor:pointer;transition:.2s} .career-btn:hover{border-color:var(--orange);transform:translateY(-2px);box-shadow:var(--shadow)} .career-btn.picked{border-color:var(--orange);background:var(--orange-light)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand"><div style="width:8px;height:8px;border-radius:50%;background:var(--orange)"></div> LPU CSE Roadmap</div>
+  <div class="nav-links">
+    <button class="nav-btn active" onclick="show('home')">🏠 Overview</button>
+    <button class="nav-btn" onclick="show('courses')">📚 Courses</button>
+    <button class="nav-btn" onclick="show('minors')">🎯 Minors</button>
+    <button class="nav-btn" onclick="show('career')">🚀 Career</button>
+  </div>
+</nav>
+
+<!-- QUICK NAV -->
+<div style="padding:10px; background:#fff; border-bottom:1px solid #eee; text-align:center;">
+  <strong>Jump to Semester:</strong>
+  <button class="nav-btn" style="border:1px solid #ddd; margin:0 2px;" onclick="scrollToSem(1)">Sem 1</button>
+  <button class="nav-btn" style="border:1px solid #ddd; margin:0 2px;" onclick="scrollToSem(2)">Sem 2</button>
+  <button class="nav-btn" style="border:1px solid #ddd; margin:0 2px;" onclick="scrollToSem(3)">Sem 3</button>
+  <button class="nav-btn" style="border:1px solid #ddd; margin:0 2px;" onclick="scrollToSem(4)">Sem 4</button>
+  <button class="nav-btn" style="border:1px solid #ddd; margin:0 2px;" onclick="scrollToSem(5)">Sem 5</button>
+  <button class="nav-btn" style="border:1px solid #ddd; margin:0 2px;" onclick="scrollToSem(6)">Sem 6</button>
+  <button class="nav-btn" style="border:1px solid #ddd; margin:0 2px;" onclick="scrollToSem(7)">Sem 7</button>
+  <button class="nav-btn" style="border:1px solid #ddd; margin:0 2px;" onclick="scrollToSem(8)">Sem 8</button>
+</div>
+
+<!-- ════════ HOME ════════ -->
+<div id="pg-home" class="page active">
+  <div class="hero">
+    <div class="hero-chip">🎓 B.Tech CSE · Program Scheme 2026</div>
+    <h1>Your Complete <span>4-Year</span><br>Academic Journey</h1>
+    <p class="hero-sub">Everything you need to understand your B.Tech CSE program — courses, minors, and career paths — all in one place.</p>
+    <div class="stats-strip">
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">Semesters</div></div>
+      <div class="stat"><div class="stat-n">160+</div><div class="stat-l">Credits</div></div>
+      <div class="stat"><div class="stat-n">6</div><div class="stat-l">Eng. Minors</div></div>
+      <div class="stat"><div class="stat-n">A++</div><div class="stat-l">NAAC Grade</div></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div style="margin-bottom:32px">
+      <div class="section-title">How to use this guide</div>
+      <div class="section-sub">Three simple steps to plan your academic journey</div>
+      <div class="how-grid">
+        <div class="how-card"><div class="how-num">1</div><div class="how-title">Explore Courses</div><div class="how-desc">See all subjects semester-wise. Filter by type — core, minor, elective — and understand what you'll study and when.</div></div>
+        <div class="how-card"><div class="how-num">2</div><div class="how-title">Choose Your Minor</div><div class="how-desc">Pick an Engineering Minor from Semester 4. This shapes your specialisation. See what jobs each minor leads to.</div></div>
+        <div class="how-card"><div class="how-num">3</div><div class="how-title">Map Your Career</div><div class="how-desc">Select your dream job role and instantly see which minor to pick, which subjects to focus on, and your learning path.</div></div>
+      </div>
+    </div>
+
+    <div style="margin:20px 0;"><div style="height:10px;background:#eee;border-radius:10px;"><div id="progressBar" style="height:10px;width:0%;background:#ff6b2b;border-radius:10px;transition:width 0.3s ease;"></div></div></div>
+    
+    <div class="section-title">📅 Year-wise Structure</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px;">
+      <div style="background:var(--white); padding:16px; border-radius:12px; border:1px solid var(--border);">
+        <h3 style="color:var(--text); font-size:15px; margin-bottom:4px;">🟢 Year 1 – Foundation</h3><p style="color:var(--sub); font-size:13px;">Sem 1 & 2 → Programming basics + Maths</p></div>
+      <div style="background:var(--white); padding:16px; border-radius:12px; border:1px solid var(--border);">
+        <h3 style="color:var(--text); font-size:15px; margin-bottom:4px;">🔵 Year 2 – Core CS</h3><p style="color:var(--sub); font-size:13px;">Sem 3 & 4 → DSA, OS, AI (Most Important)</p></div>
+      <div style="background:var(--white); padding:16px; border-radius:12px; border:1px solid var(--border);">
+        <h3 style="color:var(--text); font-size:15px; margin-bottom:4px;">🟣 Year 3 – Specialization</h3><p style="color:var(--sub); font-size:13px;">Sem 5 & 6 → Minor + Industry Skills</p></div>
+      <div style="background:var(--white); padding:16px; border-radius:12px; border:1px solid var(--border);">
+        <h3 style="color:var(--text); font-size:15px; margin-bottom:4px;">🔴 Year 4 – Career & Projects</h3><p style="color:var(--sub); font-size:13px;">Sem 7 & 8 → Capstone + Placement</p></div>
+    </div>
+
+    <div class="legend">
+      <div class="leg"><div class="leg-dot" style="background:var(--blue)"></div>Core Subject</div>
+      <div class="leg"><div class="leg-dot" style="background:var(--orange)"></div>Engineering Minor</div>
+      <div class="leg"><div class="leg-dot" style="background:var(--teal)"></div>Open Minor</div>
+      <div class="leg"><div class="leg-dot" style="background:var(--purple)"></div>Pathway / Elective</div>
+      <div class="leg"><div class="leg-dot" style="background:var(--rose)"></div>Training</div>
+    </div>
+
+    <!-- NETFLIX GRID -->
+    <div class="sem-grid" id="sem-grid"></div>
+  </div>
+</div>
+
+<!-- ════════ COURSES ════════ -->
+<div id="pg-courses" class="page">
+  <div class="container">
+    <div class="section-title">All Course Matrix</div>
+    <div class="toolbar"><input class="search" id="q" type="text" placeholder="🔍  Search course name or code…" oninput="renderCourses()"></div>
+    <div class="chip-row" id="chips"></div>
+    <div class="tbl-head"><div>Code</div><div>Course Title</div><div>Credits</div><div>Type</div><div>Semester</div></div>
+    <div class="course-list" id="course-list"></div>
+  </div>
+</div>
+
+<!-- ════════ MINORS ════════ -->
+<div id="pg-minors" class="page"><div class="container"><div class="section-title">Engineering Minors</div><div class="minors-grid" id="minors-grid"></div>
+    <div class="minor-panel" id="minor-panel" style="margin-top:20px;"></div>
+  </div>
+</div>
+
+<!-- ════════ CAREER ════════ -->
+<div id="pg-career" class="page"><div class="container"><div class="career-intro"><div class="career-intro-icon">🎯</div><div><h3>Career Mapping Engine</h3></div></div><div class="career-grid" id="career-grid"></div>
+    <div class="result-box" id="result-box" style="margin-top:20px;"></div>
+  </div>
+</div>
+
+<script>
+
+// ══════════════ DATA (Fully Restored & Detailed) ══════════════
+const semesters = [{"num":1,"year":"Year 1","label":"Foundation","phase":"Year 1","highlight":null,"courses":[{"code":"CSE111","title":"Orientation to Computing-I","cr":3,"hr":3,"type":"core"},{"code":"CSE326","title":"Internet Programming Lab","cr":2,"hr":3,"type":"core"},{"code":"PHY","title":"Physics for EE Applications","cr":3,"hr":3,"type":"core"},{"code":"ECE","title":"Electrical & Electronics Workshop","cr":1,"hr":2,"type":"core"},{"code":"INT108","title":"Python Programming","cr":4,"hr":5,"type":"core"},{"code":"MTH165","title":"Mathematics for Engineers","cr":4,"hr":4,"type":"core"},{"code":"PEL","title":"Language Elective 1","cr":3,"hr":3,"type":"elective"}],"regular":["Weekly coding challenges","Tech blogs (1 per semester)"],"fastLearner":["Shortlisting stage based on performance","Complete GitHub repository setup"],"extra":[],"exams":["Coding + PST Test","Motivational Interview"],"training":[],"breaks":["Winter Break: MOOCs"]},{"num":2,"year":"Year 1","label":"Core Programming","phase":"Year 1","highlight":null,"courses":[{"code":"CSE101","title":"Computer Programming","cr":4,"hr":5,"type":"core"},{"code":"CSE320","title":"Software Engineering","cr":3,"hr":3,"type":"core"},{"code":"INT306","title":"Database Management Systems","cr":4,"hr":4,"type":"core"},{"code":"MEC136","title":"Engineering Drawing with AutoCAD","cr":3,"hr":3,"type":"core"},{"code":"MTH166","title":"Differential Equations & Vector Calculus","cr":4,"hr":4,"type":"core"},{"code":"INT335","title":"Design Thinking","cr":3,"hr":3,"type":"core"},{"code":"PEL","title":"Language Elective 2","cr":3,"hr":3,"type":"elective"}],"regular":["Platform Aided Learning","Begin 50-100 LeetCode problems","Mini projects"],"fastLearner":["1st Shuffle Stage: Re-evaluation and potential track adjustment"],"extra":["Begin open source contributions"],"exams":["Coding + Technical interview"],"training":["Summer C++, DS & Design Thinking MOOCs"],"breaks":["Summer Break: Community Project Development"]},{"num":3,"year":"Year 2","label":"Systems & Algorithms","phase":"Year 2","highlight":{"type":"hl-red","text":"\ud83d\udd25 Most Important (DSA + DP)"},"courses":[{"code":"CSE202","title":"Object Oriented Programming","cr":4,"hr":5,"type":"core"},{"code":"CSE306","title":"Computer Networks","cr":3,"hr":3,"type":"core"},{"code":"CSE307","title":"Internetworking Essentials","cr":1,"hr":2,"type":"core"},{"code":"CSE423","title":"Virtualization & Cloud Computing","cr":3,"hr":3,"type":"core"},{"code":"GEN231","title":"Community Development Project","cr":2,"hr":2,"type":"core"},{"code":"CSE205","title":"Data Structures & Algorithms","cr":4,"hr":5,"type":"core"},{"code":"MTH401","title":"Discrete Mathematics","cr":4,"hr":4,"type":"core"},{"code":"CSE316","title":"Operating Systems","cr":3,"hr":3,"type":"core"},{"code":"CSE325","title":"Operating Systems Lab","cr":1,"hr":2,"type":"core"}],"regular":["REST APIs + Database CRUD projects","Tech blogs (1 per semester)"],"fastLearner":["2nd Shuffle Stage: Re-evaluation","API-based mini project (faculty review)"],"extra":["Open source contributions","Associate Certification Training"],"exams":["Project evaluation"],"training":["Industry training for Competitive Coding"],"breaks":[]},{"num":4,"year":"Year 2","label":"Specialization Core","phase":"Year 2","highlight":{"type":"hl-orange","text":"\u26a1 Choose Minor"},"courses":[{"code":"CSE211","title":"Computer Organization & Design","cr":4,"hr":4,"type":"core"},{"code":"CSE310","title":"Programming in Java","cr":4,"hr":5,"type":"core"},{"code":"INT428","title":"Artificial Intelligence Essentials","cr":4,"hr":4,"type":"core"},{"code":"CSE408","title":"Design & Analysis of Algorithms","cr":3,"hr":3,"type":"core"},{"code":"MTH302","title":"Probability & Statistics","cr":4,"hr":4,"type":"core"},{"code":"PEA","title":"Analytical Skills-I","cr":3,"hr":3,"type":"elective"},{"code":"EM-1","title":"Engineering Minor Elective 1","cr":3,"hr":3,"type":"minor"}],"regular":["Advanced Topics: Graph, DP, Disjoint Sets","Competitive coding contests"],"fastLearner":["3rd Shuffle Stage","Categorization based on performance"],"extra":["Industry Level Hackathon Attempts (GSoC)","Techfolio with Open Source Contributions"],"exams":["Industry mock interviews","Cloud-deployed version review"],"training":["Summer Internship Application"],"breaks":["Summer Break: Summer Internship, Digital Badges"]},{"num":5,"year":"Year 3","label":"Deep Specialization","phase":"Year 3","highlight":null,"courses":[{"code":"CSE322","title":"Formal Languages & Automation Theory","cr":3,"hr":3,"type":"core"},{"code":"OM-1","title":"Open Minor 1","cr":3,"hr":3,"type":"open"},{"code":"EM-2","title":"Engineering Minor Elective 2","cr":3,"hr":3,"type":"minor"},{"code":"EM-3","title":"Engineering Minor Elective 3","cr":3,"hr":3,"type":"minor"},{"code":"PE-1","title":"Pathway Elective 1","cr":3,"hr":3,"type":"pathway"},{"code":"PE-2","title":"Pathway Elective 2","cr":3,"hr":3,"type":"pathway"},{"code":"TE","title":"Training Elective","cr":3,"hr":3,"type":"training"}],"regular":["Product design","MERN Stack mastery (MongoDB, Express, React, Node.js)"],"fastLearner":["Recategorization based on Students Performance over the Semesters"],"extra":["Advanced AI/ML topics and real-time inference","Tech blogs (1 per semester)"],"exams":["Industry diagnostic test","Real-world project deployment and monitoring"],"training":["Grammar Optimization Competition"],"breaks":[]},{"num":6,"year":"Year 3","label":"Industry Ready","phase":"Year 3","highlight":null,"courses":[{"code":"OM-2","title":"Open Minor 2","cr":3,"hr":3,"type":"open"},{"code":"EM-4","title":"Engineering Minor Elective 4","cr":3,"hr":3,"type":"minor"},{"code":"EM-5","title":"Engineering Minor Elective 5","cr":3,"hr":3,"type":"minor"},{"code":"PE-3","title":"Pathway Elective 3","cr":3,"hr":3,"type":"pathway"},{"code":"PE-4","title":"Pathway Elective 4","cr":3,"hr":3,"type":"pathway"},{"code":"CSE393","title":"Online Academic Course","cr":3,"hr":3,"type":"elective"},{"code":"CSE332","title":"Industry Ethics & Legal Issues","cr":2,"hr":2,"type":"core"}],"regular":["550 LeetCode challenges across all difficulty levels"],"fastLearner":["Recategorization: Re-evaluation based on performance"],"extra":["CI/CD cloud deployment, Grafana monitoring dashboards","Secure, scalable application development with deployment"],"exams":["Industry benchmarking"],"training":["Industrial training (Java / Python / SDET / QA)","Product Based Pathway - Agile Project Execution Challenge"],"breaks":[]},{"num":7,"year":"Year 4","label":"Capstone Phase I","phase":"Year 4","highlight":null,"courses":[{"code":"CSE339","title":"Capstone Project-I","cr":2,"hr":4,"type":"core"},{"code":"CHE110","title":"Environmental Studies","cr":2,"hr":2,"type":"core"},{"code":"OM-3","title":"Open Minor 3","cr":3,"hr":3,"type":"open"},{"code":"IKS","title":"Indian Knowledge System","cr":2,"hr":2,"type":"core"}],"regular":["LinkedIn project video showcasing the evolution","Project optimization records"],"fastLearner":[],"extra":["Patent or research publication"],"exams":["Project Evaluation","GitHub repository with 200+ commits"],"training":["Maximum Students on Internship"],"breaks":[]},{"num":8,"year":"Year 4","label":"Capstone Phase II","phase":"Year 4","highlight":null,"courses":[{"code":"CSE435","title":"Comprehensive Seminar","cr":1,"hr":2,"type":"core"},{"code":"CSE439","title":"Capstone Project-II","cr":8,"hr":16,"type":"core"},{"code":"DE","title":"Department Elective","cr":4,"hr":4,"type":"elective"},{"code":"OM-4","title":"Open Minor 4","cr":3,"hr":3,"type":"open"}],"regular":["Major project delivery","Deployment logs and infrastructure documentation"],"fastLearner":[],"extra":["Patent / App / Research publication","Technical blog series (4-5 articles)"],"exams":["Final evaluations & Industry Jury Demo Day"],"training":["Full-time Internship with Pre-Placement Offer (PPO)"],"breaks":[]}];
+const minors = [{"id":"ml","icon":"\ud83e\udd16","color":"var(--blue)","bg":"var(--blue-light)","borderC":"var(--blue-border)","name":"Machine Learning","blurb":"Build AI models, train neural networks, and deploy intelligent systems.","subjects":["Foundations of Machine Learning","Neural Networks & Deep Learning","Natural Language Processing","Computer Vision","ML Engineering & Deployment"],"roles":[{"t":"ML Engineer","s":"\u20b912\u201330 LPA"},{"t":"Data Scientist","s":"\u20b910\u201325 LPA"},{"t":"AI Research Engineer","s":"\u20b915\u201340 LPA"}]},{"id":"ds","icon":"\ud83d\udcca","color":"var(--green)","bg":"var(--green-light)","borderC":"var(--green-border)","name":"Data Science","blurb":"Analyse datasets, build data pipelines, and visualize business insights.","subjects":["Data Analytics with Python","Big Data & Hadoop","Statistical Modelling","Data Visualization (PowerBI)","Data Engineering"],"roles":[{"t":"Data Analyst","s":"\u20b96\u201318 LPA"},{"t":"Data Engineer","s":"\u20b910\u201325 LPA"},{"t":"Analytics Manager","s":"\u20b915\u201335 LPA"}]},{"id":"cs","icon":"\ud83d\udd10","color":"var(--purple)","bg":"var(--purple-light)","borderC":"var(--purple-border)","name":"Cyber Security","blurb":"Protect systems, hack ethically, conduct forensics and manage risk.","subjects":["Network Security","Ethical Hacking","Digital Forensics","Cryptography","Security Compliance & Risk"],"roles":[{"t":"Security Analyst","s":"\u20b98\u201322 LPA"},{"t":"Penetration Tester","s":"\u20b910\u201328 LPA"},{"t":"CISO (Long-term)","s":"\u20b940\u201380 LPA"}]},{"id":"cloud","icon":"\u2601\ufe0f","color":"var(--teal)","bg":"var(--teal-light)","borderC":"var(--teal-border)","name":"Cloud Computing","blurb":"Design cloud-native systems on AWS, GCP, and Azure with DevOps.","subjects":["Cloud Architecture (AWS)","Docker & Kubernetes","DevOps & CI/CD","Serverless Computing","Cloud Security"],"roles":[{"t":"Cloud Engineer","s":"\u20b910\u201328 LPA"},{"t":"DevOps Engineer","s":"\u20b912\u201330 LPA"},{"t":"Cloud Architect","s":"\u20b920\u201350 LPA"}]},{"id":"fs","icon":"\ud83d\udcbb","color":"var(--rose)","bg":"var(--rose-light)","borderC":"var(--rose-border)","name":"Full Stack Development","blurb":"Build complete web applications \u2014 powerful frontends and robust APIs.","subjects":["Advanced React & Next.js","Node.js & Express APIs","MongoDB & SQL Databases","System Design","Mobile App Dev"],"roles":[{"t":"Software Developer","s":"\u20b98\u201318 LPA"},{"t":"Full Stack Engineer","s":"\u20b910\u201328 LPA"},{"t":"Backend Engineer","s":"\u20b912\u201330 LPA"}]}];
+const careers = [{"id":"swe","emoji":"\ud83d\udcbb","label":"Software Engineer","tag":"Full Stack / Backend","minor":"fs","subjects":["Computer Programming","Object Oriented Programming","Design & Analysis of Algorithms","Operating Systems"],"path":["Sem 1\u20132: Master foundational programming languages","Sem 3: Dedicate entirely to Data Structures (most important)","Sem 4: Excel in Java + Start Full Stack Minor","Sem 5\u20136: Advanced MERN Stack + participate in hackathons","Sem 7\u20138: Deploy a production-level app for Capstone"]},{"id":"mle","emoji":"\ud83e\udd16","label":"ML / AI Engineer","tag":"AI / Deep Learning","minor":"ml","subjects":["Python Programming","AI Essentials","Probability & Statistics","Deep Learning"],"path":["Sem 1\u20132: Master Python and advanced Mathematics","Sem 3: Grasp core algorithms & cloud foundations","Sem 4: Start Machine Learning Minor","Sem 5\u20136: Build LLMs, NLP, and Computer Vision workflows","Sem 7\u20138: Train and deploy an intelligent agent for Capstone"]},{"id":"sec","emoji":"\ud83d\udd10","label":"Cybersecurity Analyst","tag":"Security / Forensics","minor":"cs","subjects":["Computer Networks","Internetworking Essentials","Operating Systems","Ethical Hacking"],"path":["Sem 1\u20132: Master networking basics & scripting","Sem 3: Deep dive into Computer Networks + OS","Sem 4: Start Cybersecurity Minor","Sem 5\u20136: Forensics + CTF challenges + Industry Certifications","Sem 7\u20138: Conduct a full security audit project"]},{"id":"cloud","emoji":"\u2601\ufe0f","label":"Cloud Architect","tag":"Cloud / Infrastructure","minor":"cloud","subjects":["Virtualization & Cloud Computing","Operating Systems","Database Management Systems"],"path":["Sem 1\u20132: Master Linux basics and programming","Sem 3: Focus on Cloud & Virtualization workflows","Sem 4: Start Cloud Computing Minor","Sem 5\u20136: Docker, Kubernetes, CI/CD pipelines & AWS certifications","Sem 7\u20138: Engineer a fully scalable cloud-deployed system"]}];
+
+const tMap={core:"Core",minor:"Eng. Minor",open:"Open Minor",pathway:"Pathway",elective:"Elective",training:"Training"};
+const bMap={core:"b-core",minor:"b-minor",open:"b-open",pathway:"b-pathway",elective:"b-elective",training:"b-training"};
+
+const grid=document.getElementById('sem-grid');
+function renderGridUI(){
+  grid.innerHTML=semesters.map(d=>`
+    <div class="sem-item" id="si-${d.num}">
+      <div class="sem-card" id="card-${d.num}" onclick="togglePanel(${d.num},event)">
+        <div class="year-tag">${d.year}</div><div class="sem-title">Sem ${d.num}</div><div class="sem-label">${d.label}</div>
+        ${d.highlight?`<div class="sem-hl ${d.highlight.type}">${d.highlight.text}</div>`:''}
+      </div>
+    </div>`).join('');
+}
+
+let activeSem=null;
+function togglePanel(num,event){
+  const el=document.getElementById('active-expand-row');
+  document.querySelectorAll('.sem-card').forEach(c=>c.classList.remove('active'));
+  if(activeSem===num){if(el)el.remove();activeSem=null;return;}
+  if(el)el.remove();
+  const card=document.getElementById(`card-${num}`); card.classList.add('active'); activeSem=num;
+  const cols=window.innerWidth<=550?1:window.innerWidth<=900?2:4;
+  const items=Array.from(document.querySelectorAll('.sem-item'));
+  const idx=items.findIndex(e=>e.id===`si-${num}`);
+  const rowEnd=Math.min(Math.floor(idx/cols)*cols+cols-1,items.length-1);
+  const arrowPos=(card.getBoundingClientRect().left-grid.getBoundingClientRect().left)+(card.getBoundingClientRect().width/2);
+  const d=semesters.find(x=>x.num===num);
+  const mList=a=>a.map(x=>`<li>${x}</li>`).join('');
+  
+  items[rowEnd].insertAdjacentHTML('afterend', `
+    <div class="expand-row" id="active-expand-row" style="--arrow-pos:${arrowPos}px;display:block;">
+      <div class="details-panel"><button class="close-btn" onclick="togglePanel(${num},event)">×</button>
+        <div class="panel-header">Semester ${d.num} <span>${d.label} • ${d.year}</span></div>
+        <div class="cGrid">
+          <div class="d-box theme-blue"><h3>📚 Courses</h3><ul>${d.courses.map(x=>`<li><div class="c-name">${x.code} - ${x.title}</div><div class="c-meta" style="margin-top:2px;font-size:11px;color:rgba(0,0,0,0.5)"><span>${x.cr} Credits</span></div></li>`).join('')}</ul></div>
+          ${d.fastLearner && d.fastLearner.length?`<div class="d-box theme-orange"><h3>⚡ Fast Learner Track</h3><ul>${mList(d.fastLearner)}</ul></div>`:''}
+          ${d.exams && d.exams.length?`<div class="d-box theme-red"><h3>📝 Exams & ETE</h3><ul>${mList(d.exams)}</ul></div>`:''}
+          ${d.regular && d.regular.length?`<div class="d-box theme-teal"><h3>🧠 Curriculum</h3><ul>${mList(d.regular)}</ul></div>`:''}
+          ${d.extra && d.extra.length?`<div class="d-box theme-purple"><h3>🚀 Advanced / Extra Track</h3><ul>${mList(d.extra)}</ul></div>`:''}
+          ${d.training && d.training.length?`<div class="d-box theme-green"><h3>🎓 Training & Internship</h3><ul>${mList(d.training)}</ul></div>`:''}
+          ${d.breaks && d.breaks.length?`<div class="d-box theme-cyan"><h3>❄️ Breaks & Downtime</h3><ul>${mList(d.breaks)}</ul></div>`:''}
+        </div>
+      </div>
+    </div>`);
+  updateProgress(num);
+  setTimeout(()=>card.scrollIntoView({behavior:'smooth',block:'center'}),50);
+}
+window.addEventListener('resize',()=>{if(activeSem)togglePanel(activeSem)});
+
+function scrollToSem(n) {
+  show('home');
+  setTimeout(() => {
+    let card = document.getElementById(`card-${n}`);
+    if(!card) return;
+    if(activeSem !== n) togglePanel(n, null);
+    else card.scrollIntoView({behavior:'smooth',block:'center'});
+  }, 50);
+}
+
+function updateProgress(sem){ const pb=document.getElementById("progressBar"); if(pb) pb.style.width=(sem/8)*100+"%"; }
+
+const pages=['home','courses','minors','career'];
+function show(id) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active')); document.getElementById('pg-'+id).classList.add('active');
+  document.querySelectorAll('nav .nav-btn').forEach((b,i)=>b.classList.toggle('active',pages[i]===id)); window.scrollTo(0,0);
+}
+
+// ══════════════ COURSES LOGIC ══════════════
+let activeSemFilter = null, activeType = null;
+function renderChips() {
+  const sem_html = semesters.map(s => `<button class="chip" data-sem="${s.num}" onclick="togSem(${s.num})">Sem ${s.num}</button>`).join('');
+  const types_html = ['core','minor','open','pathway','elective','training'].map(t => `<button class="chip" data-type="${t}" onclick="togType('${t}')">${tMap[t]}</button>`).join('');
+  document.getElementById('chips').innerHTML = sem_html + types_html;
+}
+function togSem(n) { activeSemFilter = activeSemFilter === n ? null : n; renderCourses(); document.querySelectorAll('.chip[data-sem]').forEach(c => c.classList.toggle('on', +c.dataset.sem === activeSemFilter)); }
+function togType(t) { activeType = activeType === t ? null : t; renderCourses(); document.querySelectorAll('.chip[data-type]').forEach(c => c.classList.toggle('on', c.dataset.type === activeType)); }
+
+
+
+
+function renderCourses() {
+  const q = document.getElementById('q').value.toLowerCase();
+  let html = '';
+  semesters.forEach(s => s.courses.forEach(c => {
+    if (activeSemFilter && s.num !== activeSemFilter) return;
+    if (activeType && c.type !== activeType) return;
+    if (q && !c.title.toLowerCase().includes(q) && !c.code.toLowerCase().includes(q)) return;
+    html += `
+      <div class="cr-row" style="cursor:pointer;" onclick="pickCourse('${c.code}', this, ${s.num}, '${c.title}', ${c.cr}, ${c.hr}, '${c.type}')">
+        <div class="cr-code">${c.code}</div>
+        <div class="cr-name">${c.title}</div>
+        <div class="cr-num">${c.cr} cr</div>
+        <div><span class="badge ${bMap[c.type]}">${tMap[c.type]}</span></div>
+        <div><span class="sem-tag">Sem ${s.num}</span></div>
+      </div>`;
+  }));
+  document.getElementById('course-list').innerHTML = html || '<div style="text-align:center;padding:40px;color:var(--muted)">No matches found</div>';
+}
+
+function generateCourseIntel(code, title) {
+    const t = title.toLowerCase();
+    let topics = ["Foundational theories and modern principles", "Practical application through case studies", "Industry-standard tools and methodologies", "Capstone problem solving"];
+    let assessment = [{l:"Mid Term (CA)", v:"30%"}, {l:"Practical / Lab", v:"20%"}, {l:"End Term (ETE)", v:"50%"}];
+    let icon = "📘";
+
+    if(t.includes("ai") || t.includes("artificial") || t.includes("machine")) { icon = "🤖"; topics = ["Neural Networks & Deep Learning architectures", "Supervised and Unsupervised Learning", "Training loss optimization and gradient descent", "Real-world dataset processing"]; }
+    else if(t.includes("data structure") || t.includes("algorithm")) { icon = "🧠"; topics = ["Time and Space Complexity Analysis (Big O)", "Arrays, Strings, Pointers, and Recursion", "Trees, Graphs, and Hashmaps", "Dynamic Programming & Greedy Approaches"]; assessment = [{l:"Coding Assignments", v:"40%"}, {l:"Whiteboard Viva", v:"10%"}, {l:"End Term", v:"50%"}]; }
+    else if(t.includes("database") || t.includes("sql")) { icon = "🗄️"; topics = ["Relational DB architecture and normalisation", "Complex SQL query formulation", "NoSQL concepts (MongoDB)", "ACID properties and indexing"]; }
+    else if(t.includes("network") || t.includes("internetworking")) { icon = "🌐"; topics = ["OSI and TCP/IP Networking Models", "IP routing, subnetting, and switching", "Application layer protocols (HTTP, DNS)", "Network security fundamentals"]; }
+    else if(t.includes("cloud")) { icon = "☁️"; topics = ["IaaS, PaaS, SaaS cloud architectures", "Virtual machines and hypervisors", "AWS / Azure core infrastructure components", "Cloud deployment and auto-scaling"]; }
+    else if(t.includes("python") || t.includes("java") || t.includes("programming")) { icon = "💻"; topics = ["Core language syntax and semantics", "Object-Oriented Programming principles", "Memory management and execution structures", "Project development & debugging"]; }
+    else if(t.includes("math") || t.includes("calculus") || t.includes("probability")) { icon = "📐"; topics = ["Core mathematical proofs and theorems", "Application of variables in engineering systems", "Statistical distributions and variables", "Computable mathematical logic models"]; }
+    else if(t.includes("project") || t.includes("capstone")) { icon = "🚀"; topics = ["End-to-end full stack architecture design", "Agile sprint planning and version control", "Production-level code refactoring", "Final Industry Jury demo and presentation"]; assessment = [{l:"Sprint Reviews", v:"40%"}, {l:"Code Quality", v:"20%"}, {l:"Final Demo", v:"40%"}]; }
+
+    return { icon, topics, assessment, blurb: `Comprehensive module covering the fundamental and advanced aspects of ${title}. Structured to provide deep practical exposure aligned with industry benchmarks.` };
+}
+
+let activeCourseRow = null;
+
+function pickCourse(code, el, sem, title, cr, hr, type) {
+  const existingPanel = document.getElementById('active-course-panel');
+  if (existingPanel) {
+    existingPanel.remove();
+    if (activeCourseRow) activeCourseRow.style.borderColor = "var(--border)";
+  }
+  
+  if (activeCourseRow === el) {
+    activeCourseRow = null;
+    return; // Just close it if clicked again
+  }
+  
+  activeCourseRow = el;
+  el.style.borderColor = "var(--blue)";
+  
+  const intel = generateCourseIntel(code, title);
+  const color = tMap[type] === "Core" ? "var(--blue)" : tMap[type] === "Eng. Minor" ? "var(--orange)" : "var(--purple)";
+  
+  const panelHtml = `
+    <div id="active-course-panel" style="margin: 8px 0 16px 0; background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow-sm); animation: fadeUp 0.3s ease;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;border-bottom:1px solid #eee;padding-bottom:20px;">
+        <div style="font-size:36px; background:var(--bg); padding:14px; border-radius:14px;">${intel.icon}</div>
+        <div>
+          <div style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;color:var(--text);margin-bottom:4px;">${title}</div>
+          <div style="color:var(--sub);font-size:13px;font-weight:500;">Semester ${sem} &bull; ${tMap[type]} &bull; ${cr} Credits &bull; ${hr} Contact Hours/Wk</div>
+        </div>
+      </div>
+      
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+        <div>
+          <div style="color:var(--muted); font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; margin-bottom:16px;">📚 Subjects You'll Study</div>
+          ${intel.topics.map(t => `
+            <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:13.5px;font-weight:600;color:var(--text);">
+              <div style="width:6px;height:6px;border-radius:50%;background:${color};flex-shrink:0;margin-top:6px;"></div>
+              ${t}
+            </div>
+          `).join('')}
+        </div>
+        <div>
+          <div style="color:var(--muted); font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; margin-bottom:16px;">📊 Assessment Breakdown</div>
+          ${intel.assessment.map(a => `
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-radius:10px;border:1px solid var(--border);margin-bottom:8px;font-size:13.5px;font-weight:600;background:var(--bg);">
+              <span>${a.l}</span>
+              <span style="background:var(--blue-light);color:var(--blue);padding:4px 10px;border-radius:99px;font-size:12px;font-weight:800;">${a.v} Weightage</span>
+            </div>
+          `).join('')}
+          <div style="margin-top:16px;font-size:12px;color:var(--sub);background:var(--orange-light);padding:10px;border-radius:8px;border:1px solid var(--orange-border);">
+            💡 <strong>Note:</strong> ${intel.blurb}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  el.insertAdjacentHTML('afterend', panelHtml);
+}
+
+// ══════════════ MINORS LOGIC ══════════════
+function renderMinors() {
+  document.getElementById('minors-grid').innerHTML = minors.map(m => `
+    <div class="minor-card" id="mc-${m.id}" onclick="pickMinor('${m.id}')" style="border-color:${m.borderC}">
+      <div class="minor-icon-box" style="background:${m.bg};color:${m.color}">${m.icon}</div>
+      <div class="minor-title" style="color:var(--text)">${m.name}</div>
+      <div class="minor-blurb">${m.blurb}</div>
+    </div>
+  `).join('');
+}
+
+
+function pickMinor(id) {
+  document.querySelectorAll('.minor-card').forEach(c => c.classList.remove('picked'));
+  const btn = document.getElementById('mc-'+id); if(btn) btn.classList.add('picked');
+  const m = minors.find(x => x.id === id);
+  const p = document.getElementById('minor-panel');
+  if(!p) return;
+  p.innerHTML = `
+    <div style="background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow-sm); animation:fadeUp 0.3s ease;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;border-bottom:1px solid #f0f0f0;padding-bottom:18px;">
+        <div style="font-size:36px; background:${m.bg}; padding:10px; border-radius:12px; display:flex; align-items:center; justify-content:center; width:52px; height:52px;">${m.icon}</div>
+        <div>
+          <div style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:${m.color};letter-spacing:-0.3px;">${m.name} Minor</div>
+          <div style="color:var(--sub);font-size:13px;margin-top:2px;">5 subjects across Semester 4–6</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;">
+        <div>
+          <div style="color:var(--muted);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">SUBJECTS YOU'LL STUDY</div>
+          ${m.subjects.map(s => `
+            <div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #f9f9f9;font-size:13.5px;font-weight:600;color:var(--text);">
+              <div style="width:6px;height:6px;border-radius:50%;background:${m.color};flex-shrink:0;"></div>
+              ${s}
+            </div>
+          `).join('')}
+        </div>
+        <div>
+          <div style="color:var(--muted);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">CAREER ROLES & SALARY RANGE</div>
+          ${m.roles.map(r => `
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-radius:10px;border:1px solid var(--border);margin-bottom:8px;font-size:13.5px;font-weight:600;background:var(--bg);">
+              <span style="color:var(--text);">${r.t}</span>
+              <span style="background:var(--green-light);color:var(--green);padding:3px 10px;border-radius:99px;font-size:11.5px;font-weight:800;letter-spacing:0.5px;">${r.s}</span>
+            </div>
+          `).join('')}
+          <div style="margin-top:16px;font-size:11.5px;color:var(--sub);background:#fff9e6;padding:12px;border-radius:8px;border:1px solid #fde68a;">
+            💡 Salaries are indicative for fresh graduates and grow significantly with experience.
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  p.scrollIntoView({ behavior: 'smooth', block: 'end' });
+}
+
+
+// ══════════════ CAREERS LOGIC ══════════════
+function renderCareers() {
+  document.getElementById('career-grid').innerHTML = careers.map(c => `
+    <div class="career-btn" id="cb-${c.id}" onclick="pickCareer('${c.id}')">
+      <div class="career-emoji" style="font-size:32px;margin-bottom:8px;">${c.emoji}</div>
+      <div style="font-weight:800;font-size:15px;color:var(--text);">${c.label}</div>
+      <div style="font-size:12px;font-weight:600;color:var(--sub);margin-top:4px;">${c.tag}</div>
+    </div>
+  `).join('');
+}
+
+
+function pickCareer(id) {
+  document.querySelectorAll('.career-btn').forEach(c => c.classList.remove('picked'));
+  const btn = document.getElementById('cb-'+id); if(btn) btn.classList.add('picked');
+  const c = careers.find(x => x.id === id);
+  const minor = minors.find(m => m.id === c.minor);
+  const p = document.getElementById('result-box');
+  if(!p) return;
+  p.innerHTML = `
+    <div style="background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow-sm); animation:fadeUp 0.3s ease;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;border-bottom:1px solid #f0f0f0;padding-bottom:18px;">
+        <div style="font-size:42px;">${c.emoji}</div>
+        <div>
+          <div style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;color:var(--text);letter-spacing:-0.3px;">${c.label} Roadmap Generated</div>
+          <div style="color:var(--sub);font-size:13.5px;margin-top:2px;">Engineered strategy mapped across your 8-semester timeline.</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;">
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:22px;">
+          <div style="color:var(--muted);font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;">🎯 STEP 1: KEY MINOR TO PICK</div>
+          <div style="background:${minor.bg};border:1px solid ${minor.borderC};border-radius:12px;padding:18px;text-align:center;">
+            <div style="font-size:32px;margin-bottom:8px;">${minor.icon}</div>
+            <div style="color:${minor.color};font-weight:800;font-size:16px;">${minor.name}</div>
+            <div style="color:var(--text);font-size:12px;margin-top:6px;opacity:0.8;">Opt before Sem 4</div>
+          </div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:22px;">
+          <div style="color:var(--muted);font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;">🧠 STEP 2: CORE FOCUS SUBJECTS</div>
+          ${c.subjects.map(s => `<div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid #eaeaea;font-size:13.5px;font-weight:600;color:var(--text);"><span style="color:var(--green);font-size:16px;">✓</span> ${s}</div>`).join('')}
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:22px;">
+          <div style="color:var(--muted);font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;">🚀 STEP 3: MILESTONE TIMELINE</div>
+          ${c.path.map((step, i) => `<div style="display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #eaeaea;">
+            <div style="background:var(--blue);color:#fff;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800;flex-shrink:0;">${i+1}</div>
+            <div style="font-size:13.5px;font-weight:500;color:var(--text);line-height:1.4;margin-top:3px;">${step}</div>
+          </div>`).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+  p.scrollIntoView({ behavior: 'smooth', block: 'end' });
+}
+
+
+// Initial Executions
+renderGridUI();
+renderChips();
+renderCourses();
+renderMinors();
+renderCareers();
+
+</script>
+</body>
+</html>

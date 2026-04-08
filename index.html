@@ -1,0 +1,3628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPU CSE · 4-Year Roadmap + Fast Learner Track</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8f9fa;
+      --surface2: #ffffff;
+      --surface3: #f1f3f5;
+
+      --border: #e0e0e0;
+      --border2: #d0d0d0;
+
+      --text: #111111;
+      --sub: #555555;
+      --muted: #777777;
+
+      --orange: #f97316;
+      --orange-light: rgba(249, 115, 22, .12);
+      --orange-border: rgba(249, 115, 22, .3);
+      --blue: #2563eb;
+      --blue-light: rgba(37, 99, 235, .1);
+      --blue-border: rgba(37, 99, 235, .3);
+      --green: #16a34a;
+      --green-light: rgba(22, 163, 74, .1);
+      --green-border: rgba(22, 163, 74, .3);
+      --purple: #7c3aed;
+      --purple-light: rgba(124, 58, 237, .1);
+      --purple-border: rgba(124, 58, 237, .3);
+      --teal: #0d9488;
+      --teal-light: rgba(13, 148, 136, .1);
+      --teal-border: rgba(13, 148, 136, .25);
+      --rose: #dc2626;
+      --rose-light: rgba(220, 38, 38, .1);
+      --rose-border: rgba(220, 38, 38, .3);
+      --cyan: #0891b2;
+      --cyan-light: rgba(8, 145, 178, .1);
+      --cyan-border: rgba(8, 145, 178, .3);
+      --gold: #d97706;
+      --gold-light: rgba(217, 119, 6, .1);
+      --gold-border: rgba(217, 119, 6, .3);
+
+      /* ✅ FIXED SHADOWS */
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+      --radius: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.6
+    }
+
+    /* NAV */
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 16px;
+      position: sticky;
+      top: 0;
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      height: 58px;
+      box-shadow: var(--shadow-sm)
+    }
+
+    .brand {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--text);
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 8px var(--orange);
+      flex-shrink: 0
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 3px;
+      flex-wrap: wrap
+    }
+
+    .nav-btn {
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--sub);
+      cursor: pointer;
+      transition: .2s;
+      white-space: nowrap
+    }
+
+    .nav-btn:hover {
+      background: var(--surface3);
+      color: var(--text)
+    }
+
+    .nav-btn.active {
+      background: var(--blue-light);
+      color: var(--blue);
+      border: 1px solid var(--blue-border)
+    }
+
+    .nav-btn-design {
+      padding: 6px 13px;
+      border-radius: 8px;
+      border: 1.5px solid rgba(56, 189, 248, 0.3);
+      background: rgba(56, 189, 248, 0.1);
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0ea5e9;
+      cursor: pointer;
+      transition: .2s;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .nav-btn-design:hover {
+      background: rgba(56, 189, 248, 0.2);
+      transform: translateY(-1px);
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.15)
+    }
+
+    .nav-btn-design.active {
+      background: #0ea5e9;
+      color: #fff;
+      border-color: #0ea5e9
+    }
+
+
+    .nav-btn-fl {
+      padding: 6px 13px;
+      border-radius: 8px;
+      border: 1.5px solid var(--gold-border);
+      background: var(--gold-light);
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--gold);
+      cursor: pointer;
+      transition: .2s;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .nav-btn-fl:hover {
+      background: rgba(255, 215, 0, .2);
+      transform: translateY(-1px);
+      box-shadow: 0 0 14px rgba(255, 215, 0, .15)
+    }
+
+    .nav-btn-fl.active {
+      background: var(--gold);
+      color: #0d1117;
+      border-color: var(--gold)
+    }
+
+    .fl-pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 1.8s infinite;
+      flex-shrink: 0
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .4;
+        transform: scale(1.4)
+      }
+    }
+
+    /* QUICK NAV */
+    .quick-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 7px 16px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      justify-content: center
+    }
+
+    .quick-nav strong {
+      color: var(--muted);
+      font-size: 11.5px;
+      font-weight: 600;
+      margin-right: 4px
+    }
+
+    .q-btn {
+      padding: 3px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: transparent;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--sub);
+      cursor: pointer;
+      transition: .2s
+    }
+
+    .q-btn:hover {
+      border-color: var(--orange-border);
+      color: var(--orange);
+      background: var(--orange-light)
+    }
+
+    /* PAGES */
+    .page {
+      display: none
+    }
+
+    .page.active {
+      display: block;
+      animation: fadeUp .3s ease
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 28px 16px
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      /* needed for ::before */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* center horizontally */
+      justify-content: center;
+      /* center vertically */
+      text-align: center;
+      /* center text */
+
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 20px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(88, 166, 255, .07), transparent);
+      z-index: 0;
+    }
+
+    .hero>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(24px, 5vw, 44px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -.8px;
+      margin-bottom: 12px
+    }
+
+    .hero h1 span {
+      color: var(--orange)
+    }
+
+    .hero-sub {
+      color: var(--sub);
+      font-size: 14.5px;
+      max-width: 480px;
+      margin: 0 auto 28px
+    }
+
+    .hero h1,
+    .hero-sub,
+    .fl-cta {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .fl-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, rgba(255, 215, 0, .14), rgba(249, 115, 22, .08));
+      border: 1.5px solid var(--gold-border);
+      padding: 13px 26px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all .25s;
+      margin-bottom: 26px;
+      text-decoration: none
+    }
+
+    .fl-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 28px rgba(255, 215, 0, .18);
+      background: linear-gradient(135deg, rgba(255, 215, 0, .2), rgba(249, 115, 22, .12))
+    }
+
+    .fl-cta-icon {
+      font-size: 22px
+    }
+
+    .fl-cta-text {
+      text-align: left
+    }
+
+    .fl-cta-label {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--gold);
+      display: block
+    }
+
+    .fl-cta-desc {
+      font-size: 11.5px;
+      color: var(--sub);
+      display: block;
+      margin-top: 1px
+    }
+
+    .stats-strip {
+      display: flex;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      max-width: 560px;
+      margin: 20px auto;
+      overflow: hidden
+    }
+
+    .fl-cta-arrow {
+      font-size: 17px;
+      color: var(--gold);
+      margin-left: 4px
+    }
+
+    .design-cta {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+      border: 1px solid #bae6fd;
+      border-radius: 16px;
+      padding: 16px 24px;
+      width: 100%;
+      max-width: 600px;
+      margin: 12px auto 0;
+      cursor: pointer;
+      transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: left;
+      text-decoration: none;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .design-cta:hover {
+      transform: translateY(-2px);
+      border-color: #0ea5e9;
+      box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.1);
+      background: #f0f9ff;
+    }
+
+    .design-cta-icon {
+      width: 44px;
+      height: 44px;
+      background: #e0f2fe;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #0ea5e9;
+      flex-shrink: 0;
+      border: 1px solid #bae6fd;
+    }
+
+    .design-cta-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .design-cta-label {
+      font-family: 'Sora', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: #0369a1;
+      margin-bottom: 2px;
+    }
+
+    .design-cta-desc {
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .design-cta-arrow {
+      font-size: 18px;
+      color: #0ea5e9;
+      opacity: .6;
+      transition: .3s
+    }
+
+    .design-cta:hover .design-cta-arrow {
+      transform: translateX(4px);
+      opacity: 1;
+    }
+
+
+    .stat {
+      flex: 1;
+      padding: 13px 8px;
+      text-align: center;
+      border-right: 1px solid var(--border)
+    }
+
+    .stat:last-child {
+      border-right: none
+    }
+
+    .stat-n {
+      font-family: 'Sora', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1
+    }
+
+    .stat-l {
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 2px
+    }
+
+    /* SECTION */
+    .section-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: var(--text)
+    }
+
+    .section-sub {
+      color: var(--sub);
+      font-size: 13px;
+      margin-bottom: 16px
+    }
+
+    /* HOW */
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px
+    }
+
+    @media(max-width:600px) {
+      .how-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .how-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: .2s
+    }
+
+    .how-card:hover {
+      border-color: var(--border2)
+    }
+
+    .how-num {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 10px;
+      box-shadow: 0 0 10px rgba(249, 115, 22, .3)
+    }
+
+    .how-title {
+      font-weight: 700;
+      margin-bottom: 4px
+    }
+
+    .how-desc {
+      color: var(--sub);
+      font-size: 12.5px;
+      line-height: 1.55
+    }
+
+    /* YEAR GRID */
+    .year-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 22px
+    }
+
+    @media(max-width:500px) {
+      .year-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .year-card {
+      background: var(--surface);
+      padding: 14px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border)
+    }
+
+    .year-card h3 {
+      font-size: 13.5px;
+      margin-bottom: 3px
+    }
+
+    .year-card p {
+      color: var(--sub);
+      font-size: 12px
+    }
+
+    /* LEGEND */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 11px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 20px
+    }
+
+    .leg {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      color: var(--sub)
+    }
+
+    .leg-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0
+    }
+
+    /* PROGRESS */
+    .progress-wrap {
+      margin: 16px 0;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 11px 14px
+    }
+
+    .progress-label {
+      font-size: 11.5px;
+      color: var(--sub);
+      margin-bottom: 7px;
+      display: flex;
+      justify-content: space-between
+    }
+
+    .progress-bar-bg {
+      height: 7px;
+      background: var(--surface3);
+      border-radius: 99px;
+      overflow: hidden
+    }
+
+    .progress-bar-fill {
+      height: 7px;
+      background: linear-gradient(90deg, var(--orange), var(--gold));
+      border-radius: 99px;
+      transition: width .4s ease;
+      width: 0%
+    }
+
+    /* SEM GRID */
+    .sem-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      position: relative;
+      margin-bottom: 24px
+    }
+
+    @media(max-width:900px) {
+      .sem-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:550px) {
+      .sem-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .sem-item {
+      position: relative
+    }
+
+    .sem-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      cursor: pointer;
+      transition: all .3s cubic-bezier(.16, 1, .3, 1);
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+      height: 100%
+    }
+
+    .sem-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
+      border-color: var(--border2)
+    }
+
+    .sem-card.active {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px var(--blue-light);
+      transform: scale(1.02);
+      z-index: 20
+    }
+
+    .year-tag {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+      letter-spacing: 1px
+    }
+
+    .sem-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 2px
+    }
+
+    .sem-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--sub);
+      flex: 1
+    }
+
+    .sem-hl {
+      margin-top: 12px;
+      padding: 4px 9px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-align: center
+    }
+
+    .hl-red {
+      background: var(--rose-light);
+      color: var(--rose);
+      border: 1px solid var(--rose-border)
+    }
+
+    .hl-orange {
+      background: var(--orange-light);
+      color: var(--orange);
+      border: 1px solid var(--orange-border)
+    }
+
+    .fl-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 8px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 800;
+      background: var(--gold-light);
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+      cursor: pointer;
+      transition: .2s;
+      width: fit-content
+    }
+
+    .fl-badge:hover {
+      background: rgba(255, 215, 0, .2)
+    }
+
+    /* EXPAND PANEL */
+    .expand-row {
+      grid-column: 1/-1;
+      display: none;
+      margin: 10px 0 24px;
+      animation: slideDown .35s cubic-bezier(.16, 1, .3, 1)
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: scaleY(.95);
+        transform-origin: top
+      }
+
+      to {
+        opacity: 1;
+        transform: scaleY(1)
+      }
+    }
+
+    .details-panel {
+      background: var(--surface);
+      border: 2px solid var(--blue);
+      border-radius: var(--radius);
+      padding: 26px;
+      position: relative;
+      box-shadow: var(--shadow)
+    }
+
+    .details-panel::after {
+      content: '';
+      position: absolute;
+      top: -11px;
+      left: calc(var(--arrow-pos) - 10px);
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 11px solid var(--blue)
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--surface3);
+      border: 1px solid var(--border);
+      color: var(--sub);
+      font-size: 17px;
+      cursor: pointer;
+      transition: .2s;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1
+    }
+
+    .close-btn:hover {
+      background: var(--rose-light);
+      color: var(--rose);
+      border-color: var(--rose-border)
+    }
+
+    .panel-header {
+      font-family: 'Sora', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 13px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px
+    }
+
+    .panel-header span {
+      color: var(--sub);
+      font-size: 15px;
+      font-weight: 500
+    }
+
+    .cGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+      align-items: start
+    }
+
+    .d-box {
+      border: 1px solid;
+      border-radius: 10px;
+      padding: 16px
+    }
+
+    .d-box h3 {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 10px;
+      font-family: 'Sora', sans-serif
+    }
+
+    .d-box ul {
+      list-style: none
+    }
+
+    .d-box li {
+      font-size: 12.5px;
+      margin-bottom: 6px;
+      padding-left: 16px;
+      position: relative;
+      color: var(--text);
+      font-weight: 500
+    }
+
+    .d-box li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      font-size: 12px;
+      font-weight: 800;
+      opacity: .8
+    }
+
+    .d-box li:last-child {
+      margin-bottom: 0
+    }
+
+    /* FL DETAIL BOX – special gold */
+    .d-box.fl-detail {
+      background: rgba(255, 215, 0, .06);
+      border-color: var(--gold-border);
+      position: relative;
+      overflow: hidden
+    }
+
+    .d-box.fl-detail::before {
+      content: '⚡';
+      position: absolute;
+      right: 8px;
+      top: 6px;
+      font-size: 30px;
+      opacity: .08
+    }
+
+    .d-box.fl-detail h3 {
+      color: var(--gold)
+    }
+
+    .d-box.fl-detail li::before {
+      color: var(--gold)
+    }
+
+    .d-box.fl-detail .fl-course-row {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 8px
+    }
+
+    .d-box.fl-detail .fl-course-row:last-child {
+      margin-bottom: 0
+    }
+
+    .fl-course-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px
+    }
+
+    .fl-course-task {
+      font-size: 12px;
+      color: var(--sub);
+      line-height: 1.5
+    }
+
+    .fl-course-layer {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 10px;
+      font-weight: 700;
+      margin-top: 5px;
+      background: var(--gold-light);
+      color: var(--gold);
+      border: 1px solid var(--gold-border)
+    }
+
+    .fl-course-regular {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 10px;
+      font-weight: 700;
+      margin-top: 5px;
+      background: var(--blue-light);
+      color: var(--blue);
+      border: 1px solid var(--blue-border)
+    }
+
+    .fl-shuffle-box {
+      background: rgba(248, 81, 73, .06);
+      border: 1px solid var(--rose-border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-top: 10px
+    }
+
+    .fl-shuffle-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--rose);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      margin-bottom: 6px
+    }
+
+    .fl-shuffle-box ul {
+      list-style: none
+    }
+
+    .fl-shuffle-box li {
+      font-size: 12px;
+      color: var(--text);
+      padding: 3px 0 3px 14px;
+      position: relative;
+      border-bottom: 1px solid rgba(248, 81, 73, .1)
+    }
+
+    .fl-shuffle-box li:last-child {
+      border-bottom: none
+    }
+
+    .fl-shuffle-box li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--rose);
+      font-size: 11px
+    }
+
+    .fl-break-box {
+      background: rgba(121, 192, 255, .06);
+      border: 1px solid var(--cyan-border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-top: 8px
+    }
+
+    .fl-break-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      margin-bottom: 6px
+    }
+
+    .fl-break-box ul {
+      list-style: none
+    }
+
+    .fl-break-box li {
+      font-size: 12px;
+      color: var(--text);
+      padding: 3px 0 3px 14px;
+      position: relative;
+      border-bottom: 1px solid rgba(121, 192, 255, .1)
+    }
+
+    .fl-break-box li:last-child {
+      border-bottom: none
+    }
+
+    .fl-break-box li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-size: 11px
+    }
+
+    .theme-blue {
+      background: var(--blue-light);
+      border-color: var(--blue-border)
+    }
+
+    .theme-blue h3,
+    .theme-blue li::before {
+      color: var(--blue)
+    }
+
+    .theme-orange {
+      background: var(--orange-light);
+      border-color: var(--orange-border)
+    }
+
+    .theme-orange h3,
+    .theme-orange li::before {
+      color: var(--orange)
+    }
+
+    .theme-purple {
+      background: var(--purple-light);
+      border-color: var(--purple-border)
+    }
+
+    .theme-purple h3,
+    .theme-purple li::before {
+      color: var(--purple)
+    }
+
+    .theme-green {
+      background: var(--green-light);
+      border-color: var(--green-border)
+    }
+
+    .theme-green h3,
+    .theme-green li::before {
+      color: var(--green)
+    }
+
+    .theme-red {
+      background: var(--rose-light);
+      border-color: var(--rose-border)
+    }
+
+    .theme-red h3,
+    .theme-red li::before {
+      color: var(--rose)
+    }
+
+    .theme-teal {
+      background: var(--teal-light);
+      border-color: var(--teal-border)
+    }
+
+    .theme-teal h3,
+    .theme-teal li::before {
+      color: var(--teal)
+    }
+
+    .theme-cyan {
+      background: var(--cyan-light);
+      border-color: var(--cyan-border)
+    }
+
+    .theme-cyan h3,
+    .theme-cyan li::before {
+      color: var(--cyan)
+    }
+
+    .theme-blue li {
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid rgba(88, 166, 255, .1);
+      padding-left: 0
+    }
+
+    .theme-blue li::before {
+      content: none
+    }
+
+    .theme-blue li:last-child {
+      border-bottom: none;
+      padding-bottom: 0
+    }
+
+    .c-name {
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700
+    }
+
+    .c-meta {
+      display: flex;
+      gap: 5px;
+      font-size: 10.5px;
+      color: var(--sub);
+      margin-top: 3px;
+      font-weight: 600
+    }
+
+    .c-meta span {
+      background: var(--surface2);
+      padding: 1px 6px;
+      border-radius: 4px;
+      border: 1px solid var(--border)
+    }
+
+    /* FEATURES GRID & PATHWAYS */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 30px
+    }
+
+    @media(max-width:800px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:550px) {
+      .features-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: all .2s;
+      box-shadow: var(--shadow-sm)
+    }
+
+    .feature-card:hover {
+      border-color: var(--orange-border);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow)
+    }
+
+    .feature-icon {
+      font-size: 24px;
+      background: var(--surface2);
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      flex-shrink: 0
+    }
+
+    .feature-card h4 {
+      font-family: 'Sora', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px
+    }
+
+    .feature-card p {
+      font-size: 12px;
+      color: var(--sub);
+      line-height: 1.5
+    }
+
+    .pathways-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 38px
+    }
+
+    @media(max-width:700px) {
+      .pathways-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:500px) {
+      .pathways-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .path-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      border-top: 4px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: .2s
+    }
+
+    .path-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow)
+    }
+
+    .path-card.p-corp {
+      border-top-color: var(--blue)
+    }
+
+    .path-card.p-gov {
+      border-top-color: var(--green)
+    }
+
+    .path-card.p-edu {
+      border-top-color: var(--purple)
+    }
+
+    .path-card.p-ent {
+      border-top-color: var(--orange)
+    }
+
+    .path-card.p-res {
+      border-top-color: var(--teal)
+    }
+
+    .path-card.p-abr {
+      border-top-color: var(--rose)
+    }
+
+    .path-card h4 {
+      font-family: 'Sora', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .path-card p {
+      font-size: 12.5px;
+      color: var(--sub);
+      line-height: 1.55
+    }
+
+    .path-card ul {
+      list-style: none;
+      margin-top: 8px;
+      padding-left: 0
+    }
+
+    .path-card li {
+      font-size: 12px;
+      color: var(--sub);
+      margin-bottom: 4px;
+      padding-left: 14px;
+      position: relative
+    }
+
+    .path-card li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--text)
+    }
+
+    /* COURSES */
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 12px
+    }
+
+    .search {
+      flex: 1;
+      min-width: 180px;
+      padding: 8px 13px;
+      border-radius: 9px;
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      font-family: inherit;
+      font-size: 13px;
+      color: var(--text);
+      outline: none;
+      transition: .15s
+    }
+
+    .search:focus {
+      border-color: var(--orange)
+    }
+
+    .search::placeholder {
+      color: var(--muted)
+    }
+
+    .chip-row {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-bottom: 12px
+    }
+
+    .chip {
+      padding: 4px 10px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--sub);
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .15s;
+      font-family: inherit
+    }
+
+    .chip:hover {
+      border-color: var(--orange-border);
+      color: var(--orange)
+    }
+
+    .chip.on {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #0d1117
+    }
+
+    .tbl-head,
+    .cr-row {
+      display: grid;
+      grid-template-columns: 88px 1fr 65px 100px 75px;
+      gap: 9px;
+      align-items: center
+    }
+
+    .tbl-head {
+      padding: 0 13px 7px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    @media(max-width:640px) {
+      .tbl-head {
+        display: none
+      }
+
+      .cr-row {
+        grid-template-columns: 1fr;
+        gap: 3px
+      }
+    }
+
+    .cr-row {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 13px;
+      transition: .15s;
+      margin-bottom: 5px;
+      cursor: pointer
+    }
+
+    .cr-row:hover {
+      border-color: var(--orange-border);
+      background: var(--surface2)
+    }
+
+    .cr-code {
+      font-family: 'Sora', sans-serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--muted)
+    }
+
+    .cr-name {
+      font-weight: 600;
+      font-size: 13px
+    }
+
+    .cr-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--blue)
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-size: 10.5px;
+      font-weight: 700
+    }
+
+    .b-core {
+      background: var(--blue-light);
+      color: var(--blue)
+    }
+
+    .b-minor {
+      background: var(--orange-light);
+      color: var(--orange)
+    }
+
+    .b-open {
+      background: var(--teal-light);
+      color: var(--teal)
+    }
+
+    .b-pathway {
+      background: var(--purple-light);
+      color: var(--purple)
+    }
+
+    .b-elective {
+      background: var(--surface3);
+      color: var(--muted);
+      border: 1px solid var(--border)
+    }
+
+    .b-training {
+      background: var(--rose-light);
+      color: var(--rose)
+    }
+
+    .sem-tag {
+      background: var(--surface3);
+      color: var(--sub);
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 600
+    }
+
+    /* MINORS */
+    .minors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 11px
+    }
+
+    @media(max-width:700px) {
+      .minors-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .minor-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      cursor: pointer;
+      transition: .2s
+    }
+
+    .minor-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow)
+    }
+
+    .minor-card.picked {
+      border-width: 2px
+    }
+
+    .minor-icon-box {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+      margin-bottom: 11px
+    }
+
+    .minor-title {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 4px
+    }
+
+    .minor-blurb {
+      color: var(--sub);
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 11px
+    }
+
+    /* CAREER */
+    .career-intro {
+      background: linear-gradient(135deg, var(--orange-light), transparent);
+      border: 1px solid var(--orange-border);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-bottom: 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start
+    }
+
+    .career-intro-icon {
+      font-size: 28px
+    }
+
+    .career-intro h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px
+    }
+
+    .career-intro p {
+      color: var(--sub);
+      font-size: 12.5px
+    }
+
+    .career-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+      margin-bottom: 18px
+    }
+
+    @media(max-width:640px) {
+      .career-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    .career-btn {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 15px 11px;
+      text-align: center;
+      cursor: pointer;
+      transition: .2s
+    }
+
+    .career-btn:hover {
+      border-color: var(--orange-border);
+      transform: translateY(-2px)
+    }
+
+    .career-btn.picked {
+      border-color: var(--orange);
+      background: var(--orange-light)
+    }
+
+    /* DESIGN YOUR DEGREE DASHBOARD */
+    .blueprint-container {
+      background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+      color: #cbd5e1;
+      border-radius: 20px;
+      padding: 60px 20px;
+      min-height: 80vh;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #1e293b;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .blueprint-grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    .blueprint-header {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .blueprint-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+
+    .blueprint-subtitle {
+      color: #94a3b8;
+      font-size: 15px;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .blueprint-map {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      position: relative;
+      z-index: 10;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .bp-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .bp-node {
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 18px;
+      padding: 28px;
+      width: 300px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .bp-node:hover {
+      transform: translateY(-8px) scale(1.03);
+      border-color: #38bdf8;
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.25);
+      background: rgba(30, 41, 59, 0.85);
+    }
+
+    .bp-node::after {
+      content: 'EXPLORE →';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #38bdf8;
+      color: #020617;
+      font-size: 9px;
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 99px;
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .bp-node:hover::after {
+      opacity: 1;
+      bottom: 15px;
+    }
+
+    .bp-icon {
+      font-size: 32px;
+      margin-bottom: 20px;
+      background: rgba(56, 189, 248, 0.1);
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .bp-node h4 {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: #f1f5f9;
+      margin-bottom: 10px;
+    }
+
+    .bp-node p {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    #bp-details {
+      margin-top: 50px;
+      padding: 30px;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 20;
+    }
+
+    @media (max-width: 600px) {
+      .bp-node {
+        width: 100%;
+      }
+    }
+
+    /* OPEN MINORS SECTION */
+    .open-minors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .om-card {
+      background: var(--surface2);
+      border: 1px solid var(--teal-border);
+      border-radius: 12px;
+      padding: 18px;
+      transition: .2s;
+    }
+
+    .om-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(20, 184, 166, 0.1);
+    }
+
+    .om-icon {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .om-title {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
+
+    .om-desc {
+      font-size: 12px;
+      color: var(--sub);
+      line-height: 1.5;
+    }
+
+
+
+    /* FAST LEARNER PAGE */
+    /* FAST LEARNER HERO FIX */
+    .fl-hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* center horizontally */
+      justify-content: center;
+      /* center vertically */
+      text-align: center;
+
+      background: linear-gradient(135deg, #fff7ed 0%, #ffffff 60%);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 20px;
+    }
+
+    .fl-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 50% 60% at 50% 0%, rgba(255, 215, 0, .05), transparent);
+      z-index: 0;
+    }
+
+    .fl-hero>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .fl-hero * {
+      text-align: center;
+    }
+
+    .fl-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--gold-light);
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      padding: 5px 14px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+      text-transform: uppercase
+    }
+
+    .fl-hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(22px, 4.5vw, 40px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -.6px;
+      margin-bottom: 10px
+    }
+
+    .fl-hero h1 span {
+      color: var(--gold)
+    }
+
+    .fl-hero-sub {
+      color: var(--sub);
+      font-size: 13.5px;
+      max-width: 700px;
+      margin: 0 auto 22px
+    }
+
+    .fl-hero h1,
+    .fl-hero-sub {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .fl-hero .stats-strip {
+      margin: 20px auto;
+    }
+
+    /* ENTRY CRITERIA */
+    .entry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 26px
+    }
+
+    @media(max-width:700px) {
+      .entry-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .entry-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      text-align: center;
+      transition: .2s
+    }
+
+    .entry-card:hover {
+      border-color: var(--gold-border)
+    }
+
+    .entry-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #0d1117;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 13px;
+      margin: 0 auto 11px;
+      box-shadow: 0 0 12px rgba(255, 215, 0, .3)
+    }
+
+    .entry-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-size: 13.5px
+    }
+
+    .entry-desc {
+      color: var(--sub);
+      font-size: 12px;
+      line-height: 1.5
+    }
+
+    /* FL SEM TIMELINE */
+    .fl-sem-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: .2s
+    }
+
+    .fl-sem-card:hover {
+      border-color: var(--gold-border)
+    }
+
+    .fl-sem-card.open {
+      border-color: var(--gold-border)
+    }
+
+    .fl-sem-header {
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none
+    }
+
+    .fl-sem-num-badge {
+      background: linear-gradient(135deg, var(--gold), #f59e0b);
+      color: #0d1117;
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 99px;
+      flex-shrink: 0
+    }
+
+    .fl-sem-title-text {
+      font-weight: 700;
+      color: var(--text);
+      font-size: 13.5px;
+      flex: 1
+    }
+
+    .fl-sem-phase-text {
+      font-size: 11.5px;
+      color: var(--muted)
+    }
+
+    .fl-chevron {
+      color: var(--muted);
+      transition: .25s;
+      font-size: 13px;
+      flex-shrink: 0
+    }
+
+    .fl-sem-card.open .fl-chevron {
+      transform: rotate(180deg)
+    }
+
+    .fl-sem-body {
+      display: none;
+      padding: 0 18px 18px;
+      border-top: 1px solid var(--border)
+    }
+
+    .fl-sem-card.open .fl-sem-body {
+      display: block
+    }
+
+    /* FL DETAIL CARDS INSIDE PANEL */
+    .fl-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      padding-top: 14px
+    }
+
+    .fl-detail-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px
+    }
+
+    .fl-dc-title {
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px
+    }
+
+    .fl-course-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 7px;
+      background: var(--surface);
+      transition: .15s
+    }
+
+    .fl-course-item:last-child {
+      margin-bottom: 0
+    }
+
+    .fl-course-item:hover {
+      border-color: var(--gold-border)
+    }
+
+    .fci-code {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--muted);
+      font-family: 'Sora', sans-serif;
+      margin-bottom: 3px
+    }
+
+    .fci-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 5px
+    }
+
+    .fci-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 5px
+    }
+
+    .fci-tag {
+      padding: 2px 8px;
+      border-radius: 5px;
+      font-size: 10.5px;
+      font-weight: 700
+    }
+
+    .fci-fl {
+      background: var(--gold-light);
+      color: var(--gold);
+      border: 1px solid var(--gold-border)
+    }
+
+    .fci-layer {
+      background: var(--purple-light);
+      color: var(--purple);
+      border: 1px solid var(--purple-border)
+    }
+
+    .fci-reg {
+      background: var(--blue-light);
+      color: var(--blue);
+      border: 1px solid var(--blue-border)
+    }
+
+    .fci-task {
+      font-size: 11.5px;
+      color: var(--sub);
+      margin-top: 4px;
+      line-height: 1.45
+    }
+
+    /* SHUFFLE / BREAK in FL page */
+    .ev-box {
+      border-radius: 9px;
+      padding: 11px 13px;
+      margin-top: 10px
+    }
+
+    .ev-box.shuffle {
+      background: rgba(248, 81, 73, .06);
+      border: 1px solid var(--rose-border)
+    }
+
+    .ev-box.break {
+      background: var(--cyan-light);
+      border: 1px solid var(--cyan-border)
+    }
+
+    .ev-box.addon {
+      background: var(--purple-light);
+      border: 1px solid var(--purple-border)
+    }
+
+    .ev-title {
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      margin-bottom: 6px
+    }
+
+    .ev-box.shuffle .ev-title {
+      color: var(--rose)
+    }
+
+    .ev-box.break .ev-title {
+      color: var(--cyan)
+    }
+
+    .ev-box.addon .ev-title {
+      color: var(--purple)
+    }
+
+    .ev-box ul {
+      list-style: none
+    }
+
+    .ev-box li {
+      font-size: 12px;
+      color: var(--text);
+      padding: 3px 0 3px 14px;
+      position: relative;
+      border-bottom: 1px solid rgba(255, 255, 255, .05)
+    }
+
+    .ev-box li:last-child {
+      border-bottom: none
+    }
+
+    .ev-box.shuffle li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--rose);
+      font-size: 11px
+    }
+
+    .ev-box.break li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-size: 11px
+    }
+
+    .ev-box.addon li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--purple);
+      font-size: 11px
+    }
+
+    /* SHUFFLES SECTION */
+    .shuffle-section {
+      background: var(--surface);
+      border: 1.5px solid var(--gold-border);
+      border-radius: var(--radius);
+      padding: 22px;
+      margin-bottom: 24px
+    }
+
+    .shuffle-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 14px
+    }
+
+    @media(max-width:600px) {
+      .shuffle-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .shuffle-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px
+    }
+
+    .shuffle-card h4 {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 13.5px;
+      color: var(--gold);
+      margin-bottom: 9px
+    }
+
+    .shuffle-card ul {
+      list-style: none
+    }
+
+    .shuffle-card li {
+      font-size: 12px;
+      color: var(--sub);
+      padding: 3px 0 3px 13px;
+      position: relative;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .shuffle-card li:last-child {
+      border-bottom: none;
+      padding-bottom: 0
+    }
+
+    .shuffle-card li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--gold)
+    }
+
+    /* CAT GRID */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 9px;
+      margin-top: 14px
+    }
+
+    @media(max-width:700px) {
+      .cat-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    .cat-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+      transition: .2s
+    }
+
+    .cat-card:hover {
+      border-color: var(--gold-border);
+      transform: translateY(-2px)
+    }
+
+    .cat-lpa {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--gold);
+      margin-bottom: 3px
+    }
+
+    .cat-label {
+      font-size: 10.5px;
+      color: var(--sub);
+      font-weight: 600
+    }
+
+    /* PLACEMENTS */
+    .placement-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 24px
+    }
+
+    .placement-card {
+      background: var(--surface);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      text-align: center;
+      min-width: 120px;
+      flex: 1;
+      max-width: 170px
+    }
+
+    .placement-amt {
+      font-family: 'Sora', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--gold)
+    }
+
+    .placement-name {
+      font-size: 12.5px;
+      color: var(--text);
+      font-weight: 600;
+      margin-top: 3px
+    }
+
+    .info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-bottom: 10px
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="brand">
+      <div class="brand-dot"></div> LPU CSE Roadmap
+    </div>
+    <div class="nav-links">
+      <button class="nav-btn active" onclick="show('home')">🏠 Overview</button>
+      <button class="nav-btn" onclick="show('courses')">📚 Courses</button>
+      <button class="nav-btn" onclick="show('minors')">🎯 Minors</button>
+      <button class="nav-btn" onclick="show('career')">🚀 Career</button>
+      <button class="nav-btn-design" onclick="show('admission')">✨ Degree Design</button>
+      <button class="nav-btn-fl" onclick="show('fastlearner')">
+        <div class="fl-pulse"></div>⚡ Fast Learner Track
+      </button>
+    </div>
+
+
+  </nav>
+
+  <div class="quick-nav">
+    <strong>Jump:</strong>
+    <button class="q-btn" onclick="scrollToSem(1)">Sem 1</button>
+    <button class="q-btn" onclick="scrollToSem(2)">Sem 2</button>
+    <button class="q-btn" onclick="scrollToSem(3)">Sem 3</button>
+    <button class="q-btn" onclick="scrollToSem(4)">Sem 4</button>
+    <button class="q-btn" onclick="scrollToSem(5)">Sem 5</button>
+    <button class="q-btn" onclick="scrollToSem(6)">Sem 6</button>
+    <button class="q-btn" onclick="scrollToSem(7)">Sem 7</button>
+    <button class="q-btn" onclick="scrollToSem(8)">Sem 8</button>
+  </div>
+
+  <!-- HOME -->
+  <div id="pg-home" class="page active">
+    <div class="hero">
+      <div class="hero-badge">🎓 B.Tech CSE · Program Scheme 2026</div>
+      <h1>Your Complete <span>4-Year</span><br>Academic Journey</h1>
+      <p class="hero-sub">Courses, minors, career paths and the Fast Learner Track — all in one place.</p>
+      <button class="fl-cta" onclick="show('fastlearner')">
+        <div class="fl-cta-icon">⚡</div>
+        <div class="fl-cta-text">
+          <span class="fl-cta-label">Explore Fast Learner Track</span>
+          <span class="fl-cta-desc">Merit-based · Top 10–20% · Click any semester to see your exact tasks</span>
+        </div>
+        <span class="fl-cta-arrow">→</span>
+      </button>
+
+      <button class="design-cta" onclick="show('admission')">
+        <div class="design-cta-icon">✨</div>
+        <div class="design-cta-text">
+          <span class="design-cta-label">Design Your Degree</span>
+          <span class="design-cta-desc">Academic Blueprint · Domain Mastery · Pedagogical Logic</span>
+        </div>
+        <span class="design-cta-arrow">→</span>
+      </button>
+
+
+      <div class="stats-strip">
+        <div class="stat">
+          <div class="stat-n">8</div>
+          <div class="stat-l">Semesters</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">160+</div>
+          <div class="stat-l">Credits</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">6</div>
+          <div class="stat-l">Minors</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">A++</div>
+          <div class="stat-l">NAAC</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div style="margin-bottom:34px">
+        <div class="section-title">✨ Program Salient Features</div>
+        <div class="section-sub">Distinct advantages of LPU's Computer Science & Engineering curriculum</div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <div>
+              <h4>Curriculum</h4>
+              <p>Industry-aligned contemporary curriculum dynamically updated to cover the latest tech trends and
+                industry practices.</p>
+            </div>
+            <button class="nav-btn-design" onclick="show('courses')" style="width:fit-content; margin-top:10px; font-size:11px; padding:4px 10px;">View Matrix →</button>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <div>
+              <h4>Engineering Minors</h4>
+              <p>Develop deep domain expertise by choosing highly curated specialization minors in niche technologies.
+              </p>
+            </div>
+            <button class="nav-btn-design" onclick="show('minors')" style="width:fit-content; margin-top:10px; font-size:11px; padding:4px 10px;">Explore Minor →</button>
+
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🌐</div>
+            <div>
+              <h4>Open Minor</h4>
+              <p>Broaden your horizons with interdisciplinary open minors ranging from Management to Design Arts.</p>
+            </div>
+            <button class="nav-btn-design" onclick="show('minors'); setTimeout(()=>document.getElementById('open-minor-section').scrollIntoView({behavior:'smooth'}), 100)" style="width:fit-content; margin-top:10px; font-size:11px; padding:4px 10px;">Learn More →</button>
+
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <div>
+              <h4>Industry Interface</h4>
+              <p>Extensive collaboration with top IT companies for mentorship, internships, and live projects.</p>
+            </div>
+            <button class="nav-btn-design" onclick="show('admission')" style="width:fit-content; margin-top:10px; font-size:11px; padding:4px 10px;">Partnership →</button>
+
+
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🔬</div>
+            <div>
+              <h4>Undergraduate Research</h4>
+              <p>Publish quality papers and innovate under guided faculty mentorship during your degree.</p>
+            </div>
+            <button class="nav-btn-design" onclick="show('career'); setTimeout(()=>window.scrollTo({top:800, behavior:'smooth'}), 100)" style="width:fit-content; margin-top:10px; font-size:11px; padding:4px 10px;">Research Paths →</button>
+
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🌍</div>
+            <div>
+              <h4>Study Abroad</h4>
+              <p>Semester exchange and credit transfer programs with numerous prestigious partner universities globally.
+              </p>
+            </div>
+            <button class="nav-btn-design" onclick="show('admission')" style="width:fit-content; margin-top:10px; font-size:11px; padding:4px 10px;">Explore →</button>
+          </div>
+          <div class="feature-card" style="border-color:var(--gold-border); background:rgba(255,215,0,.04);">
+            <div class="feature-icon">✨</div>
+            <div>
+              <h4>Degree Design</h4>
+              <p>Understand the unique pedagogical architecture of your degree — from core tiers to domain mastery.</p>
+            </div>
+            <button class="nav-btn-design" onclick="show('admission')" style="width:fit-content; margin-top:10px; font-size:11px; padding:4px 10px; background:var(--gold-light); color:var(--gold); border-color:var(--gold-border);">View Blueprint →</button>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div style="margin-bottom:26px">
+        <div class="section-title">How to use this guide</div>
+        <div class="section-sub">Three steps to plan your academic journey</div>
+        <div class="how-grid">
+          <div class="how-card">
+            <div class="how-num">1</div>
+            <div class="how-title">Explore Courses</div>
+            <div class="how-desc">See all subjects semester-wise. Filter by type — core, minor, elective — to understand
+              what you'll study when.</div>
+            <button class="nav-btn-design" onclick="show('courses')" style="width:fit-content; margin-top:12px; font-size:11px; padding:4px 10px;">Go to Matrix →</button>
+          </div>
+
+          <div class="how-card">
+            <div class="how-num">2</div>
+            <div class="how-title">Choose Your Minor</div>
+            <div class="how-desc">Pick an Engineering Minor from Semester 4. This shapes your specialization and career
+              path.</div>
+            <button class="nav-btn-design" onclick="show('minors')" style="width:fit-content; margin-top:12px; font-size:11px; padding:4px 10px;">Browse Minors →</button>
+          </div>
+
+          <div class="how-card">
+            <div class="how-num">3</div>
+            <div class="how-title">Map Your Career</div>
+            <div class="how-desc">Select your dream role and get a personalised semester-by-semester roadmap instantly.
+            </div>
+            <button class="nav-btn-design" onclick="show('career')" style="width:fit-content; margin-top:12px; font-size:11px; padding:4px 10px;">Start Mapping →</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-label"><span>📍 Semester Progress</span><span id="progress-label-text">Click a semester
+            card to track</span></div>
+        <div class="progress-bar-bg">
+          <div id="progressBar" class="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-bottom:10px">📅 Year-wise Structure</div>
+      <div class="year-grid">
+        <div class="year-card">
+          <h3>🟢 Year 1 – Foundation</h3>
+          <p>Sem 1 & 2 → Programming basics + Maths</p>
+        </div>
+        <div class="year-card">
+          <h3>🔵 Year 2 – Core CS</h3>
+          <p>Sem 3 & 4 → DSA, OS, AI (Most Important)</p>
+        </div>
+        <div class="year-card">
+          <h3>🟣 Year 3 – Specialization</h3>
+          <p>Sem 5 & 6 → Minor + Industry Skills</p>
+        </div>
+        <div class="year-card">
+          <h3>🔴 Year 4 – Capstone</h3>
+          <p>Sem 7 & 8 → Projects + Placement</p>
+        </div>
+      </div>
+
+      <div class="legend">
+        <div class="leg">
+          <div class="leg-dot" style="background:var(--blue)"></div>Core
+        </div>
+        <div class="leg">
+          <div class="leg-dot" style="background:var(--orange)"></div>Eng. Minor
+        </div>
+        <div class="leg">
+          <div class="leg-dot" style="background:var(--teal)"></div>Open Minor
+        </div>
+        <div class="leg">
+          <div class="leg-dot" style="background:var(--purple)"></div>Pathway/Elective
+        </div>
+        <div class="leg">
+          <div class="leg-dot" style="background:var(--rose)"></div>Training
+        </div>
+        <div class="leg">
+          <div class="leg-dot" style="background:var(--gold)"></div>Fast Learner
+        </div>
+      </div>
+
+      <div class="sem-grid" id="sem-grid"></div>
+    </div>
+  </div>
+
+  <!-- COURSES -->
+  <div id="pg-courses" class="page">
+    <div class="container">
+      <div class="section-title">All Course Matrix</div>
+      <div class="section-sub">Filter by semester or type · Click a row for details</div>
+      <div class="toolbar"><input class="search" id="q" type="text" placeholder="🔍  Search course name or code…"
+          oninput="renderCourses()"></div>
+      <div class="chip-row" id="chips"></div>
+      <div class="tbl-head">
+        <div>Code</div>
+        <div>Course Title</div>
+        <div>Credits</div>
+        <div>Type</div>
+        <div>Semester</div>
+      </div>
+      <div id="course-list"></div>
+    </div>
+  </div>
+
+  <!-- MINORS -->
+  <div id="pg-minors" class="page">
+    <div class="container">
+      <div class="section-title">Engineering Minors</div>
+      <div class="section-sub">Choose your specialization starting Semester 4</div>
+      <div class="minors-grid" id="minors-grid"></div>
+      <div id="minor-panel" style="margin-top:16px;"></div>
+
+      <div id="open-minor-section" style="margin-top:40px;">
+        <div class="section-title">🌎 Open Minors (Interdisciplinary)</div>
+        <div class="section-sub">Broaden your horizons with these industry-aligned elective baskets</div>
+        
+        <div class="open-minors-grid">
+          <div class="om-card">
+            <div class="om-icon">💼</div>
+            <div class="om-title">Management</div>
+            <div class="om-desc">Master the fundamentals of Business Administration, HR, and Operations.</div>
+          </div>
+          <div class="om-card">
+            <div class="om-icon">📈</div>
+            <div class="om-title">Marketing</div>
+            <div class="om-desc">Dive into Consumer Behavior, Digital Marketing, and Brand Strategy.</div>
+          </div>
+          <div class="om-card">
+            <div class="om-icon">🎨</div>
+            <div class="om-title">Design Arts</div>
+            <div class="om-desc">Explore Graphic Design, UI/UX, and creative visual communication.</div>
+          </div>
+          <div class="om-card">
+            <div class="om-icon">🗣️</div>
+            <div class="om-title">Foreign Languages</div>
+            <div class="om-desc">Build global competence with German, French, or Japanese tracks.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CAREER -->
+  <div id="pg-career" class="page">
+    <div class="container">
+      <div class="section-title">🛤️ General Career Pathways</div>
+      <div class="section-sub">A Student can choose two career pathways. One from the corporate jobs, government jobs,
+        and higher studies offered in the scheme, and the second can be taken as a generic elective/open minor basket of
+        research, entrepreneurship, or study abroad.</div>
+
+      <div class="pathways-grid">
+        <div class="path-card p-corp">
+          <h4>🏢 Corporate Jobs</h4>
+          <p>Multiple options or sub-pathways designed according to the competency of the students to prepare them for
+            specific sectors/job profiles as per needs of industry.</p>
+        </div>
+        <div class="path-card p-gov">
+          <h4>🏛️ Government Jobs</h4>
+          <p>Courses to prepare students for Civil services, Public Sector Undertakings and jobs in the Government
+            sector.</p>
+        </div>
+        <div class="path-card p-edu">
+          <h4>📚 Higher Studies</h4>
+          <p>This pathway prepares students for competitive examinations such as GATE, UGC-NET, CAT, MAT etc. and helps
+            in their progression in higher studies / research.</p>
+        </div>
+        <div class="path-card p-ent">
+          <h4>💡 Entrepreneurship</h4>
+          <p>Handholding through Startup School and e-Coaches:</p>
+          <ul>
+            <li>To set up new ventures</li>
+            <li>Improve and modernize existing businesses</li>
+            <li>Start new venture related to existing business</li>
+            <li>Engage in Social entrepreneurship</li>
+          </ul>
+        </div>
+        <div class="path-card p-res">
+          <h4>🔬 Research</h4>
+          <p>This pathway helps in the progression of students in research in academia as well as industry. Focus on
+            high-quality technical publications and patents.</p>
+        </div>
+        <div class="path-card p-abr">
+          <h4>✈️ Masters Abroad</h4>
+          <p>Prepares the undergraduate to clear entrance examinations such as GRE, GMAT, IELTS, TOEFL, etc. The student
+            is provided with all kinds of counseling help to make a judicious decision of study abroad destination.</p>
+        </div>
+      </div>
+
+      <hr style="border:none;border-bottom:1px solid var(--border);margin:36px 0;">
+
+      <div class="career-intro">
+        <div class="career-intro-icon">🎯</div>
+        <div>
+          <h3>Interactive Career Mapping Engine</h3>
+          <p>Select your dream role below to get a personalised semester-by-semester roadmap based on the Corporate Jobs
+            pathway.</p>
+        </div>
+      </div>
+      <div class="career-grid" id="career-grid"></div>
+      <div id="result-box" style="margin-top:16px;"></div>
+    </div>
+  </div>
+
+  <!-- FAST LEARNER TRACK PAGE -->
+  <div id="pg-fastlearner" class="page">
+    <div class="fl-hero">
+      <div class="fl-hero-badge">
+        <div class="fl-pulse"></div>⚡ Merit-Based Program · LPU 2025 Batch
+      </div>
+      <h1>Fast Learner <span>Track</span></h1>
+      <p class="fl-hero-sub">An accelerated, project-centric pathway for top performers. Click any semester below to see
+        exactly what you need to do — course-by-course tasks from the official program sheet.</p>
+      <div class="stats-strip" style="max-width:500px;margin:0 auto">
+        <div class="stat">
+          <div class="stat-n" style="color:var(--gold)">10–20%</div>
+          <div class="stat-l">Top Students</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n" style="color:var(--gold)">3</div>
+          <div class="stat-l">Shuffle Stages</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n" style="color:var(--gold)">₹1Cr</div>
+          <div class="stat-l">Top Placement</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n" style="color:var(--gold)">4</div>
+          <div class="stat-l">Sem Projects</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="section-title" style="margin-bottom:5px">🔑 How to Qualify</div>
+      <div class="section-sub">Three pillars of entry into the Fast Learner Track</div>
+      <div class="entry-grid">
+        <div class="entry-card">
+          <div class="entry-num">1</div>
+          <div class="entry-title">Merit-Based Selection</div>
+          <div class="entry-desc">Top 10–20% based on Sem-1 CGPA, coding challenges, hackathon & GitHub performance, and
+            a motivational interview.</div>
+        </div>
+        <div class="entry-card">
+          <div class="entry-num">2</div>
+          <div class="entry-title">Dynamic Re-Evaluation</div>
+          <div class="entry-desc">Re-assessed each term via Shuffle stages — not a permanent label. You can join or exit
+            based on performance.</div>
+        </div>
+        <div class="entry-card">
+          <div class="entry-num">3</div>
+          <div class="entry-title">Voluntary Opt-In</div>
+          <div class="entry-desc">Students choose to join based on hands-on inclination and commitment to intensive
+            project-based learning.</div>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-bottom:5px">📅 Click a Semester — See Your Exact Tasks</div>
+      <div class="section-sub">All tasks are directly from the official Fast Learner program sheet</div>
+      <div id="fl-timeline"></div>
+
+      <!-- Shuffle Stages -->
+      <div class="shuffle-section">
+        <div class="section-title">🔄 Shuffle Stages — Re-Evaluation Criteria</div>
+        <div class="section-sub">Performance-based assessments at key milestones</div>
+        <div class="shuffle-grid">
+          <div class="shuffle-card">
+            <h4>🔀 1st Shuffle — After Semester 2</h4>
+            <ul>
+              <li>Coding & Problem Solving Test</li>
+              <li>Tech & Soft Skills Interview</li>
+              <li>Top ~10–20% based on Sem-1 CGPA</li>
+              <li>Performance in Challenges, Hackathon & GitHub</li>
+              <li>Motivational Interview (Hands-On Inclination)</li>
+            </ul>
+          </div>
+          <div class="shuffle-card">
+            <h4>🔀 2nd Shuffle — After Semester 3</h4>
+            <ul>
+              <li>Coding & Problem Solving Test</li>
+              <li>Tech & Soft Skills Interview</li>
+              <li>Project Evaluation</li>
+              <li>Progress on LeetCode & Open Source Contributions</li>
+            </ul>
+          </div>
+          <div class="shuffle-card">
+            <h4>🔀 3rd Shuffle — After Semester 4</h4>
+            <ul>
+              <li>Coding & Problem Solving Test</li>
+              <li>Industry Mentor & Industry Mock Interview</li>
+              <li>Project Progress & Cloud Deployment</li>
+              <li>Progress on LeetCode & Open Source</li>
+            </ul>
+          </div>
+          <div class="shuffle-card">
+            <h4>📊 Categorization — After Semester 5</h4>
+            <ul>
+              <li>Industry Mock Interview</li>
+              <li>LeetCode & Open Source progress</li>
+              <li>Performance over all semesters</li>
+              <li>Categorized: &gt;30 LPA / &gt;10 LPA / 6–10 / 4–6 / Non-Tech</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="section-title" style="margin-bottom:5px">🏆 Performance Categories</div>
+      <div class="section-sub">Based on cumulative performance — not permanent, students can always move up</div>
+      <div class="cat-grid">
+        <div class="cat-card">
+          <div class="cat-lpa">&gt;30 LPA</div>
+          <div class="cat-label">Category 1<br>Premium Placement</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-lpa">&gt;10 LPA</div>
+          <div class="cat-label">Category 2<br>High Potential</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-lpa">6–10 LPA</div>
+          <div class="cat-label">Category 3<br>Solid Foundation</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-lpa">4–6 LPA</div>
+          <div class="cat-label">Category 4<br>Growth Trajectory</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-lpa">—</div>
+          <div class="cat-label">Non-Tech Roles<br>Alt. Paths</div>
+        </div>
+      </div>
+
+      <!-- Placements -->
+      <div class="section-title" style="margin:26px 0 12px">🎉 Top Placements</div>
+      <div class="placement-strip">
+        <div class="placement-card">
+          <div class="placement-amt">₹1Cr</div>
+          <div class="placement-name">Pavan Kunchala</div>
+        </div>
+        <div class="placement-card">
+          <div class="placement-amt">₹63L</div>
+          <div class="placement-name">Arjun S</div>
+        </div>
+        <div class="placement-card">
+          <div class="placement-amt">₹58L</div>
+          <div class="placement-name">Shweta Ranjan</div>
+        </div>
+        <div class="placement-card">
+          <div class="placement-amt">₹53L</div>
+          <div class="placement-name">Anjali</div>
+        </div>
+      </div>
+
+      <!-- Credentials -->
+      <div class="section-title" style="margin-bottom:12px">🏅 Recognition & Credentials</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:30px">
+        <div class="info-card">
+          <div style="font-size:26px;margin-bottom:9px">🏷️</div>
+          <div style="font-weight:700;margin-bottom:3px">Digital Badges</div>
+          <div style="font-size:12px;color:var(--sub)">Per semester achievements visible on LinkedIn & GitHub</div>
+        </div>
+        <div class="info-card">
+          <div style="font-size:26px;margin-bottom:9px">📜</div>
+          <div style="font-weight:700;margin-bottom:3px">Micro-Certifications</div>
+          <div style="font-size:12px;color:var(--sub)">AWS, Azure, GitHub certifications for your profile</div>
+        </div>
+        <div class="info-card">
+          <div style="font-size:26px;margin-bottom:9px">🤝</div>
+          <div style="font-weight:700;margin-bottom:3px">Industry Co-Mentorship</div>
+          <div style="font-size:12px;color:var(--sub)">Completion letter from industry mentor validating your experience
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMISSION & DESIGN -->
+  <div id="pg-admission" class="page">
+    <div class="fl-hero" style="background:linear-gradient(135deg,#f0fdf4 0%,#ffffff 60%);">
+      <div class="fl-hero-badge"
+        style="background:var(--green-light);color:var(--green);border-color:var(--green-border);">
+        <div class="fl-pulse" style="background:var(--green);"></div>🎓 Admission 2026 & Degree Design
+      </div>
+      <h1>Design Your <span>Degree</span></h1>
+      <p class="fl-hero-sub">A unique pedagogical architecture that empowers you to choose your domain, learn by doing, and map your distinct career trajectory.</p>
+    </div>
+
+    <div class="container">
+      <!-- High-Tech Blueprint Section -->
+      <div class="blueprint-container" style="margin-bottom: 40px; border-radius: 20px;">
+        <div class="blueprint-grid"></div>
+        <div class="blueprint-header">
+          <h2 class="blueprint-title" style="font-size: 32px;">Academic Blueprint 2026</h2>
+          <p class="blueprint-subtitle">Analyze the DNA of your degree. We've mapped the transition from foundational sciences to deep domain engineering. Click any module to explore the details.</p>
+        </div>
+
+        <div class="blueprint-map">
+          <!-- Row 1: Core -->
+          <div class="bp-row">
+            <div class="bp-node" onclick="showBPDetails('core')">
+              <div class="bp-icon">🏛️</div>
+              <h4>Core Foundations</h4>
+              <p>The "Enquiry Zone": Bridging Math, Physics, and EE foundations into CS logic.</p>
+              <button class="nav-btn-design" style="margin-top:15px; font-size:12px; padding:6px 14px; background:rgba(56,189,248,0.2);">Explore Module</button>
+            </div>
+          </div>
+          
+          <!-- Row 2: Pillars -->
+          <div class="bp-row">
+            <div class="bp-node" onclick="showBPDetails('domain')">
+              <div class="bp-icon">🎯</div>
+              <h4>Domain Mastery</h4>
+              <p>Personalized Minors: From AI & Cyber to Cloud. Deep specialization by choice.</p>
+              <button class="nav-btn-design" style="margin-top:15px; font-size:12px; padding:6px 14px; background:rgba(56,189,248,0.2);">Explore Module</button>
+            </div>
+            <div class="bp-node" onclick="showBPDetails('doing')">
+              <div class="bp-icon">⚡</div>
+              <h4>Pedagogy: Learn by Doing</h4>
+              <p>Practical immersion: Python, Execution cycles, more LTP-led workshops.</p>
+              <button class="nav-btn-design" style="margin-top:15px; font-size:12px; padding:6px 14px; background:rgba(56,189,248,0.2);">Explore Module</button>
+            </div>
+          </div>
+
+          <!-- Row 3: Status -->
+          <div class="bp-row" style="margin-top: 20px;">
+            <div class="bp-node" onclick="showBPDetails('flt')">
+              <div class="bp-icon">🚀</div>
+              <h4>Fast Learner Track (FLT)</h4>
+              <p>Advanced tracks, foreign language options (FLT), and accelerated pathways.</p>
+              <button class="nav-btn-design" style="margin-top:15px; font-size:12px; padding:6px 14px; background:rgba(56,189,248,0.2);">Explore Module</button>
+            </div>
+            <div class="bp-node" onclick="showBPDetails('metrics')">
+              <div class="bp-icon">📊</div>
+              <h4>Execution Metrics</h4>
+              <p>Sheets & Data Analysis: Quantifying your progress through real-world labs.</p>
+              <button class="nav-btn-design" style="margin-top:15px; font-size:12px; padding:6px 14px; background:rgba(56,189,248,0.2);">Explore Module</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="bp-details" style="display: none; animation: fadeUp 0.4s ease;">
+          <h3 id="bp-detail-title" style="font-family: 'Sora', sans-serif; color: #38bdf8; margin-bottom: 15px; font-size: 24px;"></h3>
+          <div id="bp-detail-content" style="font-size: 15px; line-height: 1.7; color: #cbd5e1;"></div>
+          <button onclick="document.getElementById('bp-details').style.display='none'" style="margin-top:20px; background:transparent; border:1px solid rgba(56,189,248,0.5); color:#38bdf8; padding:8px 16px; border-radius:8px; cursor:pointer; font-weight:700;">Close Details</button>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-bottom:5px">🗺️ Degree Philosophy Mapping</div>
+
+      <div class="section-sub">Understand the core structure of your academic journey</div>
+
+      <div class="design-map-grid"
+        style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:20px;margin-bottom:30px;">
+        <div
+          style="background:var(--surface);border:1px solid var(--blue-border);border-radius:14px;padding:22px;position:relative;overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:var(--blue);"></div>
+          <h3 style="font-family:'Sora',sans-serif;font-size:16px;color:var(--blue);margin-bottom:12px;">1. Subject Core
+            Tiers</h3>
+
+          <div style="margin-bottom:14px; width: 100%;">
+            <div
+              style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:var(--muted); margin-bottom:5px; text-transform:uppercase;">
+              <span>Engg Core</span>
+              <span style="text-align:center;">C.S Core</span>
+              <span style="text-align:right;">Elective Core</span>
+            </div>
+            <div style="display:flex; height:6px; border-radius:3px; overflow:hidden;">
+              <div style="flex:1; background:var(--blue-light); border-right:2px solid var(--surface);"></div>
+              <div style="flex:1; background:rgba(37,99,235,0.4); border-right:2px solid var(--surface);"></div>
+              <div style="flex:1; background:var(--blue);"></div>
+            </div>
+          </div>
+
+          <ul style="list-style:none;">
+            <li style="margin-bottom:10px;font-size:13px;"><strong style="color:var(--text);">Engg Core:</strong> Maths
+              / Physics / E.C.</li>
+            <li style="margin-bottom:10px;font-size:13px;"><strong style="color:var(--text);">C.S - Core:</strong> DMDS
+              / Prog / Algorithms</li>
+            <li style="font-size:13px;"><strong style="color:var(--text);">Elective Core:</strong> Engg Minors / Open
+              Minors</li>
+          </ul>
+        </div>
+        <div
+          style="background:var(--surface);border:1px solid var(--orange-border);border-radius:14px;padding:22px;position:relative;overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:var(--orange);"></div>
+          <h3 style="font-family:'Sora',sans-serif;font-size:16px;color:var(--orange);margin-bottom:12px;">2. Learn
+            Degree by Domain</h3>
+          <p style="font-size:13px;color:var(--sub);line-height:1.6;">Specialise deeply through carefully curated
+            <strong>Minors</strong>. Choose a path like Machine Learning, Cybersecurity, or Full Stack, allowing you to
+            master an industry-ready domain alongside your core Computer Science fundamentals.</p>
+        </div>
+        <div
+          style="background:var(--surface);border:1px solid var(--teal-border);border-radius:14px;padding:22px;position:relative;overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:var(--teal);"></div>
+          <h3 style="font-family:'Sora',sans-serif;font-size:16px;color:var(--teal);margin-bottom:12px;">3. Learn by
+            Doing</h3>
+          <div
+            style="display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;color:var(--text);flex-wrap:wrap;">
+            <span
+              style="background:var(--surface2);padding:4px 10px;border-radius:6px;border:1px solid var(--border);">Short
+              & Immersive</span> ➔
+            <span
+              style="background:var(--surface2);padding:4px 10px;border-radius:6px;border:1px solid var(--border);">Python</span>
+            ➔
+            <span
+              style="background:var(--surface2);padding:4px 10px;border-radius:6px;border:1px solid var(--border);">Execution</span>
+            ➔
+            <span
+              style="background:var(--surface2);padding:4px 10px;border-radius:6px;border:1px solid var(--border);">LTP</span>
+          </div>
+        </div>
+        <div
+          style="background:var(--surface);border:1px solid var(--gold-border);border-radius:14px;padding:22px;position:relative;overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:var(--gold);"></div>
+          <h3 style="font-family:'Sora',sans-serif;font-size:16px;color:var(--gold);margin-bottom:12px;">4. Fast Learner
+            Track</h3>
+          <div
+            style="display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;color:var(--text);flex-wrap:wrap;">
+            <span
+              style="background:var(--surface2);padding:4px 10px;border-radius:6px;border:1px solid var(--border);">Selection</span>
+            ➔
+            <span
+              style="background:var(--surface2);padding:4px 10px;border-radius:6px;border:1px solid var(--border);">Notify</span>
+            ➔
+            <span
+              style="background:rgba(255,215,0,.15);border:1px solid var(--gold);color:var(--gold);padding:4px 10px;border-radius:6px;">FLT</span>
+          </div>
+        </div>
+      </div>
+
+      <hr style="border:none;border-bottom:1px solid var(--border);margin:36px 0;">
+
+      <div class="section-title" style="margin-bottom:5px">🚀 B.Tech CSE Admissions 2026</div>
+      <div class="section-sub">Official Eligibility, Exams, and Process</div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:20px;margin-top:20px;">
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:20px;">
+          <div style="font-size:24px;margin-bottom:10px;">📋</div>
+          <h4 style="font-family:'Sora',sans-serif;font-size:15px;margin-bottom:8px;">Eligibility Criteria</h4>
+          <p style="font-size:12.5px;color:var(--sub);line-height:1.6;">Pass with <strong>60% aggregate marks</strong>
+            in 10+2 (with Physics, Mathematics, and English) or equivalent.<br><br><span style="font-size:11px;">*5%
+              relaxation for North-East states or Defence Personnel wards.</span></p>
+        </div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:20px;">
+          <div style="font-size:24px;margin-bottom:10px;">📝</div>
+          <h4 style="font-family:'Sora',sans-serif;font-size:15px;margin-bottom:8px;">Qualifying Exams Accepted</h4>
+          <ul style="font-size:12.5px;color:var(--sub);line-height:1.6;padding-left:18px;margin-bottom:14px;">
+            <li><strong>LPUNEST</strong> (Recommended)
+              <div style="font-size:11px; color:var(--muted); margin-top:2px;">↳ CBT (Computer Based Test) ➔ Remote
+                available</div>
+            </li>
+            <li>JEE Main</li>
+            <li>CUET</li>
+          </ul>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--orange);">
+            <span
+              style="background:var(--orange-light);padding:4px 6px;border-radius:6px;border:1px solid var(--orange-border);">CAPP</span>
+            ➔ <span
+              style="background:var(--orange-light);padding:4px 6px;border-radius:6px;border:1px solid var(--orange-border);">LPU.in</span>
+            ➔ <span
+              style="background:var(--orange-light);padding:4px 6px;border-radius:6px;border:1px solid var(--orange-border);">Seat
+              Allocation</span>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="margin-top:20px;background:var(--purple-light);border:1px solid var(--purple-border);border-radius:12px;padding:18px;">
+        <h4 style="font-family:'Sora',sans-serif;font-size:14px;color:var(--purple);margin-bottom:6px;">💡 About LPUNEST
+        </h4>
+        <p style="font-size:12.5px;color:var(--sub);line-height:1.5;">The LPUNEST exam offers convenient choices to
+          candidates: Online remotely proctored from Home (recommended based on available resources) or Test
+          centre-based options. It is not just an entrance exam but also serves as the basis for the comprehensive
+          <strong>Scholarship</strong> framework to significantly lower course fees.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+    // ══════ DATA FROM Fast_Learner_26.xlsx ══════
+    const semesters = [
+      {
+        num: 1, year: "Year 1", label: "Foundation", highlight: null,
+        courses: [
+          { code: "CSE111", title: "Orientation to Computing-I", cr: 3, hr: 3, type: "core", regular: "Sensitization about Fast Learner Track – Benefits & Implementation", fl: "Not Applicable", flLayer: null },
+          { code: "CSE326", title: "Internet Programming Laboratory", cr: 2, hr: 3, type: "core", regular: "Weekly Lab Challenges – Post Mid Terms\nHackathon Participation and Performance", fl: "Shortlisting Stage", flLayer: "Shortlisting Stage" },
+          { code: "PHY???", title: "Physics for Electrical & Electronics Applications", cr: 3, hr: 3, type: "core", regular: null, fl: null, flLayer: null },
+          { code: "ECE???", title: "Electrical and Electronics Systems Workshop", cr: 1, hr: 2, type: "core", regular: null, fl: null, flLayer: null },
+          { code: "INT108", title: "Python Programming", cr: 4, hr: 5, type: "core", regular: "Weekly Coding Challenges – Post Mid Term\nGitHub Progress & Code Reviews", fl: "Shortlisting Stage", flLayer: "Shortlisting Stage" },
+          { code: "MTH165", title: "Mathematics for Engineers", cr: 4, hr: 4, type: "core", regular: "Problem Solving Challenge – 1 Pre Mid Term & 1 Post Mid Term", fl: "Shortlisting Stage", flLayer: "Shortlisting Stage" },
+          { code: "PEL", title: "Language Elective 1", cr: 3, hr: 4, type: "elective", regular: null, fl: "Shortlisting for Foreign Languages", flLayer: "Shortlisting Stage" },
+        ],
+        ete: "Coding & Problem Solving Test\nMotivational Interview (Hands-On Inclination)",
+        shuffle: "1st Shuffle (Entry): Top ~10–20% based on Sem-1 CGPA, Coding & Problem Solving test and Performance in Semester via Challenges, Hackathon & GitHub. Motivational interview (Hands-On Inclination). Voluntary opt-in, dynamic each term.",
+        shuffleLabel: "Entry / 1st Shortlisting",
+        winterBreak: ["MOOCs on C Programming and DBMS"],
+        summerBreak: null, addOns: null
+      },
+      {
+        num: 2, year: "Year 1", label: "Core Programming", highlight: null,
+        courses: [
+          { code: "CSE101", title: "Computer Programming", cr: 4, hr: 5, type: "core", regular: "Platform Aided Learning", fl: "LeetCode & Code Reviews", flLayer: "Mini Project" },
+          { code: "CSE320", title: "Software Engineering", cr: 3, hr: 3, type: "core", regular: null, fl: "Requirement Gathering, Code Reviews and Agile Methodology", flLayer: null },
+          { code: "INT306", title: "Database Management Systems", cr: 4, hr: 5, type: "core", regular: "Platform Aided Learning", fl: "NoSQL MongoDB Certification Track", flLayer: "Certification" },
+          { code: "MEC136", title: "Engineering Drawing with AutoCAD", cr: 3, hr: 3, type: "core", regular: null, fl: null, flLayer: null },
+          { code: "MTH166", title: "Differential Equations & Vector Calculus", cr: 4, hr: 4, type: "core", regular: null, fl: null, flLayer: null },
+          { code: "INT335", title: "Design Thinking", cr: 3, hr: 3, type: "core", regular: "In Class Activities", fl: "Industry Workshop on Design Thinking", flLayer: null },
+          { code: "PEL", title: "Language Elective 2", cr: 3, hr: 4, type: "elective", regular: "Verbal & Communication Skills", fl: "Option for Foreign Languages", flLayer: null },
+        ],
+        ete: "Coding & Problem Solving Test\nTech & Soft Skills Interview",
+        shuffle: "1st Shuffle: Coding & Problem Solving Test, Tech & Soft Skills Interview",
+        shuffleLabel: "1st Shuffle",
+        winterBreak: null,
+        summerBreak: ["Community Project Development", "Training through industry mentors on C++ & Introduction to Data Structures"],
+        summerBreakLayer: "Industry Training & MooCs",
+        addOns: null
+      },
+      {
+        num: 3, year: "Year 2", label: "Systems & Algorithms", highlight: { type: "hl-red", text: "🔥 Most Important (DSA + DP)" },
+        courses: [
+          { code: "CSE202", title: "Object Oriented Programming", cr: 4, hr: 5, type: "core", regular: "Platform Aided Learning", fl: "LeetCode & Code Reviews\n50 to 100 LeetCode Problems\nStarting of Open Source Contributions", flLayer: "API based Mini Project\nLeetCode Profile" },
+          { code: "CSE306", title: "Computer Networks", cr: 3, hr: 3, type: "core", regular: null, fl: "LTP will be adjusted for Certification Training", flLayer: null },
+          { code: "CSE307", title: "Internetworking Essentials", cr: 1, hr: 2, type: "core", regular: null, fl: "LTP will be adjusted for Certification Training", flLayer: null },
+          { code: "CSE423", title: "Virtualization and Cloud Computing", cr: 3, hr: 3, type: "core", regular: "Hands-On Learning through Virtual labs", fl: "Associate Certification Training", flLayer: "Certification" },
+          { code: "GEN231", title: "Community Development Project", cr: 2, hr: 4, type: "core", regular: null, fl: null, flLayer: null },
+          { code: "CSE205", title: "Data Structures and Algorithms", cr: 4, hr: 5, type: "core", regular: "Platform Aided Learning", fl: "Advanced Topics – Graph, DP, Disjoint Sets, Introduction to Competitive Coding", flLayer: "Project Initiation for the next 4 Sems" },
+          { code: "MTH401", title: "Discrete Mathematics", cr: 4, hr: 4, type: "core", regular: null, fl: null, flLayer: null },
+          { code: "CSE316", title: "Operating Systems", cr: 3, hr: 3, type: "core", regular: null, fl: null, flLayer: null },
+          { code: "CSE325", title: "Operating Systems Laboratory", cr: 1, hr: 2, type: "core", regular: null, fl: null, flLayer: null },
+        ],
+        ete: "Coding & Problem Solving Test\nTech & Soft Skills Interview\nProject Evaluation\nProgress on LeetCode and Open Source Contribution",
+        shuffle: "2nd Shuffle: Coding & Problem Solving Test, Tech & Soft Skills Interview, Project Evaluation, Progress on LeetCode and Open Source Contribution",
+        shuffleLabel: "2nd Shuffle",
+        winterBreak: ["Techfolio with Open Source Contributions", "MOOCs on Java Basics"],
+        winterBreakLayer: "Hackathons & MooCs",
+        summerBreak: null, addOns: null
+      },
+      {
+        num: 4, year: "Year 2", label: "Specialization Core", highlight: { type: "hl-orange", text: "⚡ Choose Minor" },
+        courses: [
+          { code: "CSE211", title: "Computer Organization and Design", cr: 4, hr: 4, type: "core", regular: null, fl: null, flLayer: null },
+          { code: "CSE310", title: "Programming in Java", cr: 4, hr: 5, type: "core", regular: "Platform Aided Learning", fl: "Advance JAVA – GUI, APIs etc.", flLayer: null },
+          { code: "INT428", title: "Artificial Intelligence Essentials", cr: 4, hr: 4, type: "core", regular: "In Class Activities", fl: "Advance Topics – Constraint Based Modeling, Real Time Inference, Reinforcement Learning & GEN AI", flLayer: "Mini AI Project" },
+          { code: "CSE408", title: "Design and Analysis of Algorithms", cr: 3, hr: 3, type: "core", regular: "Platform Aided Learning", fl: "Industry training for Competitive Coding", flLayer: "LeetCode\nIndustry Hackathons" },
+          { code: "MTH302", title: "Probability and Statistics", cr: 4, hr: 4, type: "core", regular: null, fl: null, flLayer: null },
+          { code: "PEA", title: "Analytical Skills-I", cr: 3, hr: 3, type: "elective", regular: "In Class Activities", fl: "Practice Based Learning with Lecture Exemption", flLayer: null },
+          { code: "EM-1", title: "Engineering Minor Elective 1", cr: 3, hr: 4, type: "minor", regular: null, fl: null, flLayer: null },
+        ],
+        ete: "Coding & Problem Solving Test\nIndustry Mentor and Industry Mock Interview\nProject Progress and Cloud Deployment\nProgress on LeetCode and Open Source Contribution",
+        shuffle: "3rd Shuffle: Coding & Problem Solving Test, Industry Mentor & Industry Mock Interview, Project Progress & Cloud Deployment, LeetCode & Open Source progress",
+        shuffleLabel: "3rd Shuffle",
+        winterBreak: null,
+        summerBreak: ["Summer Internship", "Digital Badges & Certification"],
+        summerBreakLayer: "Internship / Certification",
+        addOns: ["Summer Internship Application", "Industry Level Hackathon Attempts (GSoC etc.)", "Project Continuation – Cloud based Deployed Version"],
+        addOnsLayer: "Project Continuity\nSummer Internship"
+      },
+      {
+        num: 5, year: "Year 3", label: "Deep Specialization", highlight: null,
+        courses: [
+          { code: "CSE322", title: "Formal Languages & Automation Theory", cr: 3, hr: 3, type: "core", regular: "Automata Visualization – Improved conceptual clarity of automata behavior", fl: "Grammar Optimization Competition", flLayer: "Optimized grammar structures" },
+          { code: "OM", title: "Open Minor 1", cr: 3, hr: 3, type: "open", regular: null, fl: null, flLayer: null },
+          { code: "EM-2", title: "Engineering Minor Elective 2", cr: 3, hr: 4, type: "minor", regular: "In Class Activities", fl: "MooCs Platform for Industry level Certificate for the respective Engineering Minor", flLayer: "Certificate" },
+          { code: "EM-3", title: "Engineering Minor Elective 3", cr: 3, hr: 4, type: "minor", regular: "In Class Activities", fl: "Scalable and Resilient Intelligent System Development", flLayer: "Project with AI-powered feature (Model accuracy + UX)" },
+          { code: "PE-1", title: "Pathway Elective 1", cr: 3, hr: 3, type: "pathway", regular: "Service Based Pathway – Aptitude, Verbal, Combinatorial Studies", fl: "Product Design Hackathon", flLayer: "Design and implement a minimum viable product" },
+          { code: "PE-2", title: "Pathway Elective 2", cr: 3, hr: 4, type: "pathway", regular: "Service Based Pathway – Aptitude, Verbal, Combinatorial Studies", fl: "Product Based Pathway – COMPETITIVE CODING APPROACHES & TECHNIQUES", flLayer: "Coding Contests & Certification" },
+          { code: "TE", title: "Training Elective", cr: 3, hr: 6, type: "training", regular: null, fl: null, flLayer: null },
+        ],
+        ete: "Industry Diagnostic Test (Mettl, CoCubes, AMCAT)\nCategorization of Students",
+        shuffle: "Categorization of Students:\n1. >30 LPA\n2. >10 LPA\n3. 6 to 10 LPA\n4. 4 to 6 LPA\nSome students categorized for only Non-Tech Roles",
+        shuffleLabel: "Categorization of Students",
+        winterBreak: ["Participation in Smart India Hackathon / Kaggle"],
+        winterBreakLayer: "Summer Internship Participations",
+        summerBreak: null,
+        addOns: ["Train & integrate ML model", "Project Continuation – AI Integration"],
+        addOnsLayer: "Project Continuation\nIndustry Level Hackathon",
+        industrialTraining: "Advanced Training – GEN AI, Agentic AI, Data Engineering, HFT etc. (varies as per industry needs)"
+      },
+      {
+        num: 6, year: "Year 3", label: "Industry Ready", highlight: null,
+        courses: [
+          { code: "OM", title: "Open Minor 2", cr: 3, hr: 3, type: "open", regular: null, fl: null, flLayer: null },
+          { code: "EM-4", title: "Engineering Minor Elective 4", cr: 3, hr: 4, type: "minor", regular: "In Class Activities", fl: "Industry Mentorship on Engg. Minor Project", flLayer: "Domain Project" },
+          { code: "EM-5", title: "Engineering Minor Elective 5", cr: 3, hr: 4, type: "minor", regular: "In Class Activities", fl: "Secure, scalable application development with deployment (Tools: MERN Stack, GitHub)", flLayer: "Deployable full-stack apps" },
+          { code: "PE-3", title: "Pathway Elective 3", cr: 3, hr: 4, type: "pathway", regular: "Service Based Pathway – Aptitude, Verbal, Combinatorial Studies", fl: "Product Based Pathway – Performance Optimization Contest", flLayer: "Optimized system performance" },
+          { code: "PE-4", title: "Pathway Elective 4", cr: 3, hr: 3, type: "pathway", regular: "Service Based Pathway – Aptitude, Verbal, Combinatorial Studies", fl: "Product Based Pathway – Agile Project Execution Challenge", flLayer: "Hackathons & MooCs" },
+          { code: "CSE393", title: "Online Academic Course", cr: 3, hr: 3, type: "elective", regular: null, fl: null, flLayer: null },
+          { code: "CSE332", title: "Industry Ethics and Legal Issues", cr: 2, hr: 2, type: "core", regular: null, fl: null, flLayer: null },
+        ],
+        ete: "Industry Benchmarking (Mettl, CoCubes, AMCAT)\nTraining Performance & Feedback",
+        shuffle: "Re-Categorization of Students:\n1. >30 LPA\n2. >10 LPA\n3. 6 to 10 LPA\n4. 4 to 6 LPA",
+        shuffleLabel: "Re-Categorization of Students",
+        winterBreak: null,
+        summerBreak: ["Summer Internships / Project Development"],
+        summerBreakLayer: "Internship Experience",
+        addOns: null
+      },
+      {
+        num: 7, year: "Year 4", label: "Capstone Phase I", highlight: null,
+        courses: [
+          { code: "CSE339", title: "Capstone Project-I", cr: 2, hr: 4, type: "core", regular: "Mini Innovative Project", fl: "Maximum Students on Internship", flLayer: null },
+          { code: "CHE110", title: "Environmental Studies", cr: 2, hr: 2, type: "core", regular: null, fl: null, flLayer: null },
+          { code: "OM-3", title: "Open Minor 3", cr: 3, hr: 3, type: "open", regular: null, fl: "Code Optimization Contest", flLayer: "Project optimization based deployment" },
+          { code: "CSE", title: "Indian Knowledge System", cr: 2, hr: 2, type: "core", regular: null, fl: "Patent/Scopus Indexed Research Paper", flLayer: "Scopus Based Research Publication" },
+        ],
+        ete: "Project Evaluation",
+        shuffle: null, shuffleLabel: null,
+        winterBreak: null, summerBreak: null, addOns: null
+      },
+      {
+        num: 8, year: "Year 4", label: "Capstone Phase II", highlight: null,
+        courses: [
+          { code: "CSE435", title: "Comprehensive Seminar", cr: 1, hr: 2, type: "core", regular: null, fl: null, flLayer: null },
+          { code: "CSE439", title: "Capstone Project-II", cr: 8, hr: 16, type: "core", regular: "Major Project Presentation", fl: "Students will be on Internship", flLayer: "Internship with PPO" },
+          { code: "DE", title: "Department Elective", cr: 4, hr: 5, type: "elective", regular: null, fl: null, flLayer: null },
+          { code: "OM-4", title: "Open Minor 4", cr: 3, hr: 3, type: "open", regular: null, fl: "Publication of APP / Patent / Paper", flLayer: null },
+        ],
+        ete: "Final Evaluations & Industry Jury Demo Day",
+        shuffle: null, shuffleLabel: null,
+        winterBreak: null, summerBreak: null, addOns: null
+      }
+    ];
+
+    const minors = [
+      { id: "ml", icon: "🤖", color: "var(--blue)", bg: "var(--blue-light)", borderC: "var(--blue-border)", name: "Machine Learning", blurb: "Build AI models, train neural networks, and deploy intelligent systems.", subjects: ["Foundations of Machine Learning", "Neural Networks & Deep Learning", "Natural Language Processing", "Computer Vision", "ML Engineering & Deployment"], roles: [{ t: "ML Engineer", s: "₹12–30 LPA" }, { t: "Data Scientist", s: "₹10–25 LPA" }, { t: "AI Research Engineer", s: "₹15–40 LPA" }] },
+      { id: "ds", icon: "📊", color: "var(--green)", bg: "var(--green-light)", borderC: "var(--green-border)", name: "Data Science", blurb: "Analyse datasets, build data pipelines, and visualize business insights.", subjects: ["Data Analytics with Python", "Big Data & Hadoop", "Statistical Modelling", "Data Visualization (PowerBI)", "Data Engineering"], roles: [{ t: "Data Analyst", s: "₹6–18 LPA" }, { t: "Data Engineer", s: "₹10–25 LPA" }, { t: "Analytics Manager", s: "₹15–35 LPA" }] },
+      { id: "cs", icon: "🔐", color: "var(--purple)", bg: "var(--purple-light)", borderC: "var(--purple-border)", name: "Cyber Security", blurb: "Protect systems, hack ethically, conduct forensics and manage risk.", subjects: ["Network Security", "Ethical Hacking", "Digital Forensics", "Cryptography", "Security Compliance & Risk"], roles: [{ t: "Security Analyst", s: "₹8–22 LPA" }, { t: "Penetration Tester", s: "₹10–28 LPA" }, { t: "CISO (Long-term)", s: "₹40–80 LPA" }] },
+      { id: "cloud", icon: "☁️", color: "var(--teal)", bg: "var(--teal-light)", borderC: "var(--teal-border)", name: "Cloud Computing", blurb: "Design cloud-native systems on AWS, GCP, and Azure with DevOps.", subjects: ["Cloud Architecture (AWS)", "Docker & Kubernetes", "DevOps & CI/CD", "Serverless Computing", "Cloud Security"], roles: [{ t: "Cloud Engineer", s: "₹10–28 LPA" }, { t: "DevOps Engineer", s: "₹12–30 LPA" }, { t: "Cloud Architect", s: "₹20–50 LPA" }] },
+      { id: "fs", icon: "💻", color: "var(--rose)", bg: "var(--rose-light)", borderC: "var(--rose-border)", name: "Full Stack Dev", blurb: "Build complete web applications — powerful frontends and robust APIs.", subjects: ["Advanced React & Next.js", "Node.js & Express APIs", "MongoDB & SQL Databases", "System Design", "Mobile App Dev"], roles: [{ t: "Software Developer", s: "₹8–18 LPA" }, { t: "Full Stack Engineer", s: "₹10–28 LPA" }, { t: "Backend Engineer", s: "₹12–30 LPA" }] }
+    ];
+
+    const careers = [
+      { id: "swe", emoji: "💻", label: "Software Engineer", tag: "Full Stack / Backend", minor: "fs", subjects: ["Computer Programming", "Object Oriented Programming", "Design & Analysis of Algorithms", "Operating Systems"], path: ["Sem 1–2: Master foundational programming, GitHub setup", "Sem 3: Dedicate entirely to Data Structures (most important)", "Sem 4: Excel in Java + Start Full Stack Minor", "Sem 5–6: Advanced MERN Stack + Hackathons + Cloud Deployment", "Sem 7–8: Deploy production-level app for Capstone"] },
+      { id: "mle", emoji: "🤖", label: "ML / AI Engineer", tag: "AI / Deep Learning", minor: "ml", subjects: ["Python Programming", "AI Essentials", "Probability & Statistics", "Deep Learning"], path: ["Sem 1–2: Master Python and advanced Mathematics", "Sem 3: Grasp core algorithms & cloud foundations", "Sem 4: Start Machine Learning Minor + AI Essentials deep dive", "Sem 5–6: Build LLMs, NLP, and Computer Vision workflows", "Sem 7–8: Train and deploy an intelligent agent for Capstone"] },
+      { id: "sec", emoji: "🔐", label: "Cybersecurity Analyst", tag: "Security / Forensics", minor: "cs", subjects: ["Computer Networks", "Internetworking Essentials", "Operating Systems", "Ethical Hacking"], path: ["Sem 1–2: Master networking basics & scripting", "Sem 3: Deep dive into Computer Networks + OS", "Sem 4: Start Cybersecurity Minor", "Sem 5–6: Forensics + CTF challenges + Industry Certifications", "Sem 7–8: Conduct a full security audit project for Capstone"] },
+      { id: "cloud", emoji: "☁️", label: "Cloud Architect", tag: "Cloud / Infrastructure", minor: "cloud", subjects: ["Virtualization & Cloud Computing", "Operating Systems", "Database Management Systems"], path: ["Sem 1–2: Master Linux basics and programming", "Sem 3: Focus on Cloud & Virtualization with Virtual labs", "Sem 4: Start Cloud Computing Minor", "Sem 5–6: Docker, Kubernetes, CI/CD pipelines & AWS certifications", "Sem 7–8: Engineer a fully scalable cloud-deployed system"] }
+    ];
+
+    const tMap = { core: "Core", minor: "Eng. Minor", open: "Open Minor", pathway: "Pathway", elective: "Elective", training: "Training" };
+    const bMap = { core: "b-core", minor: "b-minor", open: "b-open", pathway: "b-pathway", elective: "b-elective", training: "b-training" };
+
+    // ══════ SEM GRID ══════
+    const grid = document.getElementById('sem-grid');
+    function renderGridUI() {
+      grid.innerHTML = semesters.map(d => {
+        const hasFl = d.courses.some(c => c.fl && c.fl != "Not Applicable");
+        return `<div class="sem-item" id="si-${d.num}">
+      <div class="sem-card" id="card-${d.num}" onclick="togglePanel(${d.num},event)">
+        <div class="year-tag">${d.year}</div>
+        <div class="sem-title">Sem ${d.num}</div>
+        <div class="sem-label">${d.label}</div>
+        ${d.highlight ? `<div class="sem-hl ${d.highlight.type}">${d.highlight.text}</div>` : ''}
+        ${hasFl ? `<div class="fl-badge" onclick="openFLsem(${d.num},event)">⚡ FL Tasks →</div>` : ''}
+      </div>
+    </div>`;
+      }).join('');
+    }
+
+    let activeSem = null;
+    function togglePanel(num, event) {
+      const el = document.getElementById('active-expand-row');
+      document.querySelectorAll('.sem-card').forEach(c => c.classList.remove('active'));
+      if (activeSem === num) { if (el) el.remove(); activeSem = null; return; }
+      if (el) el.remove();
+      const card = document.getElementById(`card-${num}`); card.classList.add('active'); activeSem = num;
+      const cols = window.innerWidth <= 550 ? 1 : window.innerWidth <= 900 ? 2 : 4;
+      const items = Array.from(document.querySelectorAll('.sem-item'));
+      const idx = items.findIndex(e => e.id === `si-${num}`);
+      const rowEnd = Math.min(Math.floor(idx / cols) * cols + cols - 1, items.length - 1);
+      const arrowPos = (card.getBoundingClientRect().left - grid.getBoundingClientRect().left) + (card.getBoundingClientRect().width / 2);
+      const d = semesters.find(x => x.num === num);
+      const mList = a => a.map(x => `<li>${x}</li>`).join('');
+
+      // Build FL courses content
+      const flCourses = d.courses.filter(c => c.fl && c.fl != "Not Applicable");
+      let flHtml = '';
+      if (flCourses.length) {
+        flHtml = `<div class="d-box fl-detail"><h3>⚡ Fast Learner Tasks</h3>
+      ${flCourses.map(c => `
+        <div class="fl-course-item">
+          <div class="fci-code">${c.code}</div>
+          <div class="fci-name">${c.title}</div>
+          <div class="fci-task">${c.fl.replace(/\n/g, '<br>')}</div>
+          <div class="fci-row">
+            ${c.flLayer ? `<span class="fci-tag fci-layer">${c.flLayer.replace(/\n/g, ' · ')}</span>` : ''}
+            ${c.regular ? `<span class="fci-tag fci-reg">Regular: ${c.regular.split('\n')[0]}</span>` : ''}
+          </div>
+        </div>`).join('')}
+      ${d.shuffle ? `<div class="fl-shuffle-box"><div class="fl-shuffle-title">📋 ${d.shuffleLabel || 'Evaluation'}</div><ul>${d.shuffle.split('\n').filter(x => x.trim()).map(l => `<li>${l}</li>`).join('')}</ul></div>` : ''}
+      ${d.winterBreak ? `<div class="fl-break-box"><div class="fl-break-title">❄️ Winter Break Tasks</div><ul>${d.winterBreak.map(l => `<li>${l}${d.winterBreakLayer ? ` <span style="color:var(--muted);font-size:10px;">(${d.winterBreakLayer})</span>` : ''}`).join('</li><li>')}</li></ul></div>` : ''}
+      ${d.summerBreak ? `<div class="fl-break-box"><div class="fl-break-title">☀️ Summer Break Tasks</div><ul>${d.summerBreak.map(l => `<li>${l}</li>`).join('')}</ul></div>` : ''}
+      ${d.addOns ? `<div class="fl-break-box" style="background:var(--purple-light);border-color:var(--purple-border)"><div class="fl-break-title" style="color:var(--purple)">➕ Add-Ons</div><ul>${d.addOns.map(l => `<li style="--c:var(--purple)">${l}</li>`).join('')}</ul></div>` : ''}
+    </div>`;
+      }
+
+      const regularCourses = d.courses.filter(c => c.regular);
+      let regHtml = '';
+      if (regularCourses.length) {
+        regHtml = `<div class="d-box theme-teal"><h3>🧠 Curriculum Highlights</h3><ul>${regularCourses.map(c => `<li><strong>${c.code}:</strong> ${c.regular.split('\n')[0]}</li>`).join('')}</ul></div>`;
+      }
+
+      items[rowEnd].insertAdjacentHTML('afterend', `
+    <div class="expand-row" id="active-expand-row" style="--arrow-pos:${arrowPos}px;display:block;">
+      <div class="details-panel">
+        <button class="close-btn" onclick="togglePanel(${num},event)">×</button>
+        <div class="panel-header">Semester ${d.num} <span>${d.label} · ${d.year}</span></div>
+        <div class="cGrid">
+          <div class="d-box theme-blue"><h3>📚 Courses</h3><ul>${d.courses.map(c => `<li><div class="c-name">${c.code} – ${c.title}</div><div class="c-meta"><span>${c.cr} Cr</span><span class="${bMap[c.type]}" style="padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;">${tMap[c.type]}</span></div></li>`).join('')}</ul></div>
+          ${flHtml}
+          ${regHtml}
+          ${d.ete ? `<div class="d-box theme-red"><h3>📝 ETE / Evaluation</h3><ul>${d.ete.split('\n').map(x => `<li>${x}</li>`).join('')}</ul></div>` : ''}
+        </div>
+      </div>
+    </div>`);
+      updateProgress(num);
+      setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 50);
+    }
+
+    function openFLsem(num, event) {
+      event.stopPropagation();
+      show('fastlearner');
+      setTimeout(() => {
+        const el = document.getElementById('fl-sem-' + num);
+        if (el) { el.classList.add('open'); el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      }, 100);
+    }
+
+    window.addEventListener('resize', () => { if (activeSem) { const e = document.getElementById('active-expand-row'); if (e) e.remove(); activeSem = null; } });
+
+    function scrollToSem(n) {
+      show('home');
+      setTimeout(() => { const card = document.getElementById(`card-${n}`); if (!card) return; if (activeSem !== n) togglePanel(n, null); else card.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 60);
+    }
+
+    function updateProgress(sem) {
+      const pb = document.getElementById('progressBar'); const lbl = document.getElementById('progress-label-text');
+      if (pb) pb.style.width = (sem / 8) * 100 + '%';
+      if (lbl) lbl.textContent = `Semester ${sem} of 8 — ${semesters[sem - 1].label}`;
+    }
+
+    const pages = ['home', 'courses', 'minors', 'career', 'fastlearner', 'admission', 'designdegree'];
+    function show(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('pg-' + id).classList.add('active');
+      document.querySelectorAll('nav .nav-btn, nav .nav-btn-fl, nav .nav-btn-design').forEach(b => {
+        b.classList.remove('active');
+        if ((b.getAttribute('onclick') || '').includes(`'${id}'`)) b.classList.add('active');
+      });
+      window.scrollTo(0, 0);
+    }
+
+    const bpData = {
+      core: {
+        title: "Subject Core Tiers (The Enquiry Zone)",
+        content: `Your degree starts with a multi-layered core foundation:
+        <ul style="margin-top:10px; padding-left:20px;">
+          <li><strong>Engineering Core:</strong> Mathematics / Physics / Electrical & Electronics fundamentals. This is the "Enquiry Zone" where you learn the physics of computing.</li>
+          <li><strong>C.S - Core:</strong> Data Mining, Programming, and Algorithms. The backbone of every software solution.</li>
+          <li><strong>Elective Core:</strong> Specialization choices that define your distinct engineering flavor.</li>
+        </ul>`
+      },
+      domain: {
+        title: "Learn Degree by Domain (Minors)",
+        content: `Standard B.Tech degrees are broad; yours is targeted. Starting Semester 4, you pick your <strong>Domain Minor</strong>:
+        <ul style="margin-top:10px; padding-left:20px;">
+          <li>Deep-dive into Machine Learning, Cyber Security, or Cloud.</li>
+          <li>5 dedicated subjects that shape your placement profile.</li>
+          <li>Industry-aligned curriculum updated every 12 months.</li>
+        </ul>`
+      },
+      doing: {
+        title: "Pedagogy: Learn by Doing",
+        content: `Move beyond passive lectures. Our system is built on **Active Execution**:
+        <ul style="margin-top:10px; padding-left:20px;">
+          <li><strong>LTP Structure:</strong> Balanced Lecture, Tutorial, and Practical time.</li>
+          <li><strong>Execution Cycles:</strong> Rapid prototyping in Python and specialized workshops.</li>
+          <li><strong>Mini-Capstone:</strong> Every semester includes a build-to-learn task.</li>
+        </ul>`
+      },
+      flt: {
+        title: "The Fast Learner Track & Foreign Languages",
+        content: `For high-performing students, the Fast Learner Track (FLT) offers:
+        <ul style="margin-top:10px; padding-left:20px;">
+          <li><strong>Selection:</strong> Dynamic internal selection based on semester performance.</li>
+          <li><strong>Accelerated Modules:</strong> Skip redundant basics; move straight to advanced industrial training.</li>
+          <li><strong>FLT Options:</strong> Foreign Language Training, International Certifications, and Industry Mentorship badges.</li>
+        </ul>`
+      },
+      metrics: {
+        title: "Execution Metrics & Sheets Analysis",
+        content: `We don't just grade exams; we analyze data.
+        <ul style="margin-top:10px; padding-left:20px;">
+          <li><strong>Performance Sheets:</strong> Granular tracking of your coding milestones.</li>
+          <li><strong>Data Analysis:</strong> We map your speed and accuracy in problem-solving to categorize you for top-tier corporate roles (>10LPA / >30LPA).</li>
+        </ul>`
+      }
+    };
+
+    function showBPDetails(key) {
+      const pane = document.getElementById('bp-details');
+      const title = document.getElementById('bp-detail-title');
+      const content = document.getElementById('bp-detail-content');
+      
+      title.innerText = bpData[key].title;
+      content.innerHTML = bpData[key].content;
+      pane.style.display = 'block';
+      pane.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
+
+
+    // ══════ COURSES ══════
+    let activeSemFilter = null, activeType = null;
+    function renderChips() {
+      const sh = semesters.map(s => `<button class="chip" data-sem="${s.num}" onclick="togSem(${s.num})">Sem ${s.num}</button>`).join('');
+      const ty = ['core', 'minor', 'open', 'pathway', 'elective', 'training'].map(t => `<button class="chip" data-type="${t}" onclick="togType('${t}')">${tMap[t]}</button>`).join('');
+      document.getElementById('chips').innerHTML = sh + ty;
+    }
+    function togSem(n) { activeSemFilter = activeSemFilter === n ? null : n; renderCourses(); document.querySelectorAll('.chip[data-sem]').forEach(c => c.classList.toggle('on', +c.dataset.sem === activeSemFilter)); }
+    function togType(t) { activeType = activeType === t ? null : t; renderCourses(); document.querySelectorAll('.chip[data-type]').forEach(c => c.classList.toggle('on', c.dataset.type === activeType)); }
+    function renderCourses() {
+      const q = document.getElementById('q').value.toLowerCase(); let html = '';
+      semesters.forEach(s => s.courses.forEach(c => {
+        if (activeSemFilter && s.num !== activeSemFilter) return;
+        if (activeType && c.type !== activeType) return;
+        if (q && !c.title.toLowerCase().includes(q) && !c.code.toLowerCase().includes(q)) return;
+        html += `<div class="cr-row" onclick="pickCourse('${c.code}',this,${s.num},'${c.title.replace(/'/g, "\\'")}',${c.cr},${c.hr},'${c.type}','${(c.fl || '').replace(/'/g, "\\'").replace(/\n/g, '\\n')}','${(c.regular || '').replace(/'/g, "\\'").replace(/\n/g, '\\n')}','${(c.flLayer || '').replace(/'/g, "\\'")}')">
+      <div class="cr-code">${c.code}</div><div class="cr-name">${c.title}</div>
+      <div class="cr-num">${c.cr} cr</div>
+      <div><span class="badge ${bMap[c.type]}">${tMap[c.type]}</span></div>
+      <div><span class="sem-tag">Sem ${s.num}</span></div>
+    </div>`;
+      }));
+      document.getElementById('course-list').innerHTML = html || '<div style="text-align:center;padding:36px;color:var(--muted)">No matches found</div>';
+    }
+
+    let activeCourseRow = null;
+    function pickCourse(code, el, sem, title, cr, hr, type, fl, regular, flLayer) {
+      const ep = document.getElementById('active-course-panel');
+      if (ep) ep.remove();
+      if (activeCourseRow === el) { activeCourseRow = null; return; }
+      if (activeCourseRow) activeCourseRow.style.borderColor = 'var(--border)';
+      activeCourseRow = el; el.style.borderColor = 'var(--orange)';
+      const color = type === 'core' ? 'var(--blue)' : type === 'minor' ? 'var(--orange)' : 'var(--purple)';
+      const flTasks = fl ? fl.replace(/\\n/g, '\n').split('\n').filter(x => x.trim()) : [];
+      const regTasks = regular ? regular.replace(/\\n/g, '\n').split('\n').filter(x => x.trim()) : [];
+      const layerTags = flLayer ? flLayer.replace(/\\n/g, ' · ') : '';
+      el.insertAdjacentHTML('afterend', `
+    <div id="active-course-panel" style="margin:7px 0 13px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:20px;animation:fadeUp .3s ease;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;border-bottom:1px solid var(--border);padding-bottom:14px;">
+        <div style="font-size:28px;background:var(--surface2);padding:10px;border-radius:10px;">📘</div>
+        <div><div style="font-family:'Sora',sans-serif;font-size:18px;font-weight:800;margin-bottom:3px;">${title}</div>
+        <div style="color:var(--sub);font-size:12px;">Sem ${sem} · ${tMap[type]} · ${cr} Credits · ${hr} hrs/wk</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+        ${regTasks.length ? `<div><div style="color:var(--muted);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">📖 Regular Batch Activity</div>
+          ${regTasks.map(t => `<div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid var(--border);font-size:12.5px;font-weight:600;"><div style="width:5px;height:5px;border-radius:50%;background:${color};flex-shrink:0;margin-top:5px;"></div>${t}</div>`).join('')}</div>` : ''}
+        ${flTasks.length ? `<div style="background:rgba(255,215,0,.06);border:1px solid var(--gold-border);border-radius:9px;padding:14px;position:relative;overflow:hidden;">
+          <div style="position:absolute;right:8px;top:6px;font-size:24px;opacity:.1">⚡</div>
+          <div style="color:var(--gold);font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">⚡ Fast Learner Tasks</div>
+          ${flTasks.map(t => `<div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,215,0,.1);font-size:12.5px;font-weight:600;color:var(--text);"><div style="width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px;"></div>${t}</div>`).join('')}
+          ${layerTags ? `<div style="margin-top:10px;padding:5px 9px;border-radius:6px;background:var(--gold-light);border:1px solid var(--gold-border);font-size:10.5px;font-weight:700;color:var(--gold);">🏷️ ${layerTags}</div>` : ''}</div>` : ''}
+      </div>
+    </div>`);
+    }
+
+    // ══════ MINORS ══════
+    function renderMinors() {
+      document.getElementById('minors-grid').innerHTML = minors.map(m => `
+    <div class="minor-card" id="mc-${m.id}" onclick="pickMinor('${m.id}')" style="border-color:${m.borderC}">
+      <div class="minor-icon-box" style="background:${m.bg};color:${m.color}">${m.icon}</div>
+      <div class="minor-title" style="color:${m.color}">${m.name}</div>
+      <div class="minor-blurb">${m.blurb}</div>
+    </div>`).join('');
+    }
+    function pickMinor(id) {
+      document.querySelectorAll('.minor-card').forEach(c => c.classList.remove('picked'));
+      const btn = document.getElementById('mc-' + id); if (btn) btn.classList.add('picked');
+      const m = minors.find(x => x.id === id); const p = document.getElementById('minor-panel'); if (!p) return;
+      p.innerHTML = `<div style="background:var(--surface);border:1.5px solid ${m.borderC};border-radius:var(--radius);padding:22px;animation:fadeUp .3s ease;">
+    <div style="display:flex;align-items:center;gap:11px;margin-bottom:16px;border-bottom:1px solid var(--border);padding-bottom:14px;">
+      <div style="font-size:28px;background:${m.bg};padding:9px;border-radius:10px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;">${m.icon}</div>
+      <div><div style="font-family:'Sora',sans-serif;font-size:17px;font-weight:700;color:${m.color};">${m.name} Minor</div>
+      <div style="color:var(--sub);font-size:12px;margin-top:2px;">5 subjects across Semester 4–6</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;">
+      <div><div style="color:var(--muted);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:9px;">SUBJECTS</div>
+        ${m.subjects.map(s => `<div style="display:flex;align-items:center;gap:7px;padding:7px 0;border-bottom:1px solid var(--border);font-size:12.5px;font-weight:600;"><div style="width:5px;height:5px;border-radius:50%;background:${m.color};flex-shrink:0;"></div>${s}</div>`).join('')}</div>
+      <div><div style="color:var(--muted);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:9px;">CAREER ROLES & SALARY</div>
+        ${m.roles.map(r => `<div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-radius:8px;border:1px solid var(--border);margin-bottom:6px;font-size:12.5px;font-weight:600;background:var(--surface2);"><span>${r.t}</span><span style="background:var(--green-light);color:var(--green);padding:2px 7px;border-radius:99px;font-size:10.5px;font-weight:800;">${r.s}</span></div>`).join('')}
+        <div style="margin-top:10px;font-size:11px;color:var(--sub);background:var(--surface2);padding:9px;border-radius:8px;border:1px solid var(--border);">💡 Indicative for fresh graduates, grows with experience.</div>
+      </div>
+    </div>
+  </div>`;
+      p.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
+
+    // ══════ CAREERS ══════
+    function renderCareers() {
+      document.getElementById('career-grid').innerHTML = careers.map(c => `
+    <div class="career-btn" id="cb-${c.id}" onclick="pickCareer('${c.id}')">
+      <div style="font-size:26px;margin-bottom:6px;">${c.emoji}</div>
+      <div style="font-weight:800;font-size:13.5px;">${c.label}</div>
+      <div style="font-size:11px;font-weight:600;color:var(--sub);margin-top:2px;">${c.tag}</div>
+    </div>`).join('');
+    }
+    function pickCareer(id) {
+      document.querySelectorAll('.career-btn').forEach(c => c.classList.remove('picked'));
+      const btn = document.getElementById('cb-' + id); if (btn) btn.classList.add('picked');
+      const c = careers.find(x => x.id === id); const minor = minors.find(m => m.id === c.minor);
+      const p = document.getElementById('result-box'); if (!p) return;
+      p.innerHTML = `<div style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px;animation:fadeUp .3s ease;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;border-bottom:1px solid var(--border);padding-bottom:14px;">
+      <div style="font-size:34px;">${c.emoji}</div>
+      <div><div style="font-family:'Sora',sans-serif;font-size:19px;font-weight:800;">${c.label} Roadmap</div>
+      <div style="color:var(--sub);font-size:12.5px;margin-top:2px;">Personalised across 8 semesters</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;">
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:18px;">
+        <div style="color:var(--muted);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:11px;">🎯 KEY MINOR TO PICK</div>
+        <div style="background:${minor.bg};border:1px solid ${minor.borderC};border-radius:9px;padding:14px;text-align:center;">
+          <div style="font-size:26px;margin-bottom:6px;">${minor.icon}</div>
+          <div style="color:${minor.color};font-weight:800;font-size:14px;">${minor.name}</div>
+          <div style="color:var(--sub);font-size:11px;margin-top:4px;">Opt before Semester 4</div>
+        </div>
+      </div>
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:18px;">
+        <div style="color:var(--muted);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:11px;">🧠 FOCUS SUBJECTS</div>
+        ${c.subjects.map(s => `<div style="display:flex;align-items:center;gap:7px;padding:6px 0;border-bottom:1px solid var(--border);font-size:12.5px;font-weight:600;"><span style="color:var(--green);">✓</span>${s}</div>`).join('')}
+      </div>
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:18px;">
+        <div style="color:var(--muted);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:11px;">🚀 MILESTONES</div>
+        ${c.path.map((step, i) => `<div style="display:flex;gap:9px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--border);">
+          <div style="background:var(--blue);color:#fff;min-width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">${i + 1}</div>
+          <div style="font-size:12.5px;font-weight:500;line-height:1.4;margin-top:1px;">${step}</div>
+        </div>`).join('')}
+      </div>
+    </div>
+  </div>`;
+      p.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
+
+    // ══════ FL TIMELINE ══════
+    function renderFLTimeline() {
+      const tl = document.getElementById('fl-timeline');
+      tl.innerHTML = semesters.map(d => {
+        const flCourses = d.courses.filter(c => c.fl && c.fl != "Not Applicable");
+        return `<div class="fl-sem-card" id="fl-sem-${d.num}" onclick="toggleFLsem(${d.num})">
+      <div class="fl-sem-header">
+        <span class="fl-sem-num-badge">Sem ${d.num}</span>
+        <span class="fl-sem-title-text">${d.label}</span>
+        <span class="fl-sem-phase-text">${d.year}</span>
+        ${flCourses.length ? `<span style="font-size:11px;background:var(--gold-light);color:var(--gold);border:1px solid var(--gold-border);padding:2px 8px;border-radius:99px;font-weight:700;flex-shrink:0;">${flCourses.length} FL task${flCourses.length > 1 ? 's' : ''}</span>` : ''}
+        <span class="fl-chevron">▼</span>
+      </div>
+      <div class="fl-sem-body">
+        <div class="fl-detail-grid">
+          ${flCourses.length ? `
+          <div class="fl-detail-card">
+            <div class="fl-dc-title" style="color:var(--gold)">⚡ Course-wise Fast Learner Tasks</div>
+            ${flCourses.map(c => `
+              <div class="fl-course-item">
+                <div class="fci-code">${c.code}</div>
+                <div class="fci-name">${c.title}</div>
+                <div class="fci-task">${c.fl.replace(/\n/g, '<br>')}</div>
+                <div class="fci-row">
+                  ${c.flLayer ? `<span class="fci-tag fci-fl">🏷️ ${c.flLayer.replace(/\n/g, ' · ')}</span>` : ''}
+                  ${c.regular ? `<span class="fci-tag fci-reg">Regular: ${c.regular.split('\n')[0]}</span>` : ''}
+                </div>
+              </div>`).join('')}
+          </div>`: '<div class="fl-detail-card"><div style="color:var(--muted);font-size:13px;text-align:center;padding:10px;">No specific Fast Learner tasks — follow the standard curriculum.</div></div>'}
+          
+          ${(d.shuffle || d.winterBreak || d.summerBreak || d.addOns) ? `
+          <div class="fl-detail-card">
+            ${d.shuffle ? `<div class="fl-dc-title" style="color:var(--rose)">📋 ${d.shuffleLabel || 'Evaluation Stage'}</div>
+              <div class="ev-box shuffle">
+                <div class="ev-title">${d.shuffleLabel}</div>
+                <ul>${d.shuffle.split('\n').filter(x => x.trim()).map(l => `<li>${l}</li>`).join('')}</ul>
+              </div>`: ''}
+            ${d.ete ? `<div class="ev-box shuffle" style="margin-top:8px;">
+                <div class="ev-title">📝 ETE / Evaluation Criteria</div>
+                <ul>${d.ete.split('\n').map(l => `<li>${l}</li>`).join('')}</ul>
+              </div>`: ''}
+            ${d.winterBreak ? `<div class="ev-box break" style="margin-top:8px;">
+                <div class="ev-title">❄️ Winter Break Tasks ${d.winterBreakLayer ? `(${d.winterBreakLayer})` : ''}</div>
+                <ul>${d.winterBreak.map(l => `<li>${l}</li>`).join('')}</ul>
+              </div>`: ''}
+            ${d.summerBreak ? `<div class="ev-box break" style="margin-top:8px;background:rgba(249,115,22,.05);border-color:var(--orange-border);">
+                <div class="ev-title" style="color:var(--orange)">☀️ Summer Break Tasks${d.summerBreakLayer ? ` (${d.summerBreakLayer})` : ''}</div>
+                <ul>${d.summerBreak.map(l => `<li style="--c:var(--orange)">${l}</li>`).join('')}</ul>
+              </div>`: ''}
+            ${d.addOns ? `<div class="ev-box addon" style="margin-top:8px;">
+                <div class="ev-title">➕ Add-Ons${d.addOnsLayer ? ` (${d.addOnsLayer})` : ''}</div>
+                <ul>${d.addOns.map(l => `<li>${l}</li>`).join('')}</ul>
+              </div>`: ''}
+            ${d.industrialTraining ? `<div class="ev-box addon" style="margin-top:8px;background:var(--green-light);border-color:var(--green-border);">
+                <div class="ev-title" style="color:var(--green)">🏭 Industrial Training (FL)</div>
+                <ul><li>${d.industrialTraining}</li></ul>
+              </div>`: ''}
+          </div>`: ''}
+        </div>
+      </div>
+    </div>`;
+      }).join('');
+    }
+
+    function toggleFLsem(num) {
+      const el = document.getElementById('fl-sem-' + num);
+      if (!el) return;
+      const wasOpen = el.classList.contains('open');
+      document.querySelectorAll('.fl-sem-card.open').forEach(c => c.classList.remove('open'));
+      if (!wasOpen) el.classList.add('open');
+    }
+
+    // ══════ INIT ══════
+    renderGridUI(); renderChips(); renderCourses(); renderMinors(); renderCareers(); renderFLTimeline();
+
+  </script>
+</body>
+
+</html>
